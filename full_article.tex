@@ -144,41 +144,52 @@ agents that obtained the absolute value of the lowest mean-squared
 error (MSE) plus the sum of its agents scores (explained in Section
 \ref{proposed-method}). 
 
-The structure of this work is as follows: in Section
-\ref{related-work} an extensive background of related works is
-given. Special attention was given to this section in order to provide
-the necessary foundations for the proposed method, as it is a new
-algorithm based on many different technologies and methodologies. In
-Section \ref{proposed-method} the theory of the proposed method is
-given, explaining every aspect of its specification. A number of
-extensive experiments are presented in Section
-\ref{experiments-and-results}, along with their results. The
-experiments were carefully designed in order to provide enough
-information to support the efficacy of the proposed
-method. Conclusions about the presented work, and a brief description
-about the work that is planned to be done in the future are given in
-Section \ref{conclusions}.
+% The structure of this work is as follows: in Section
+% \ref{related-work} an extensive background of related works is
+% given. Special attention was given to this section in order to provide
+% the necessary foundations for the proposed method, as it is a new
+% algorithm based on many different technologies and methodologies. In
+% Section \ref{proposed-method} the theory of the proposed method is
+% given, explaining every aspect of its specification. A number of
+% extensive experiments are presented in Section
+% \ref{experiments-and-results}, along with their results. The
+% experiments were carefully designed in order to provide enough
+% information to support the efficacy of the proposed
+% method. Conclusions about the presented work, and a brief description
+% about the work that is planned to be done in the future are given in
+% Section \ref{conclusions}.
+
+The rest of the paper is structured as follows: next we will present
+an overview of the state of the art in the use of multi-agent systems
+for financial forecasting, as well as other soft computing techniques,
+followed by a presentation of the methodology followed in
+\ref{proposed-method} whose results are presented in Section
+\ref{experiments-and-results}. Finally, we will draw our conclusions
+and discuss future lines of work.
 
 \section{Related Work}
 \label{related-work}
 
-The layout of this section starts in Subsection \ref{financial-forecasting} with the mention of a series of works about financial forecasting and some of the different techniques that have been used to effectively describe and predict financial markets. Several and different approaches of the design of MAS are presented in a series of works in Subsection \ref{multi-agent-systems}. Methods related to the proposed method that used evolutionary algorithms in order to optimize or find better architectures in the development of forecasting models are presented in Subsections \ref{genetic-algorithms} and \ref{genetic-programming}. It is important to pay special attention to the works presented in Subsection \ref{genetic-programming}, as the proposed method specifically uses GP as part of its algorithm. The next Subsection \ref{fuzzy-prediction} presents works where Fuzzy Logic is used in the forecast of financial markets. Finally, a brief mention of some works about DSS is presented in Subsection \ref{decision-support-systems}.
+% The layout of this section starts in Subsection \ref{financial-forecasting} with the mention of a series of works about financial forecasting and some of the different techniques that have been used to effectively describe and predict financial markets. Several and different approaches of the design of MAS are presented in a series of works in Subsection \ref{multi-agent-systems}. Methods related to the proposed method that used evolutionary algorithms in order to optimize or find better architectures in the development of forecasting models are presented in Subsections \ref{genetic-algorithms} and \ref{genetic-programming}. It is important to pay special attention to the works presented in Subsection \ref{genetic-programming}, as the proposed method specifically uses GP as part of its algorithm. The next Subsection \ref{fuzzy-prediction} presents works where Fuzzy Logic is used in the forecast of financial markets. Finally, a brief mention of some works about DSS is presented in Subsection \ref{decision-support-systems}.
 
-\subsection{Financial Forecasting}
-\label{financial-forecasting}
+% \subsection{Financial Forecasting}
+% \label{financial-forecasting}
 
-This work involves the use of machine learning techniques to forecast financial markets. There is a plethora of techniques used for regression and for the creation of DSS, and it would be inconvenient to list many of them, but some notable examples are presented.
+% This work involves the use of machine learning techniques to forecast financial markets. There is a plethora of techniques used for regression and for the creation of DSS, and it would be inconvenient to list many of them, but some notable examples are presented.
 
-The work by Brown, Pelosi and Dirska \cite{brown2013dynamic} uses a niche genetic algorithm called dynamic-radius species-conserving genetic algorithm to select stocks to purchase from the Dow Jones Index. It is important to mention this work because, in the end, the DSS that is presented in the proposed method does the same kind of recommendation as in their work. Additionally, Brown, et al., uploaded the dataset that the authors of the present work used to perform the different experiments. In Section \ref{experiments-and-results} a comparison to their work is provided.
+% The work by Brown, Pelosi and Dirska \cite{brown2013dynamic} uses a niche genetic algorithm called dynamic-radius species-conserving genetic algorithm to select stocks to purchase from the Dow Jones Index. It is important to mention this work because, in the end, the DSS that is presented in the proposed method does the same kind of recommendation as in their work. Additionally, Brown, et al., uploaded the dataset that the authors of the present work used to perform the different experiments. In Section \ref{experiments-and-results} a comparison to their work is provided.
 
-The work by Lu, Lee, and Chiu \cite{Lu2009} point out the complexity of financial time series. They note its noisy nature and propose a technique to reduce this noise based in a two-stage modeling approach using independent component analysis and support vector regression. Their approach first uses independent component analysis for generating independent components to identify and remove those containing the noise, then the remaining components are used to reconstruct the forecasting variables which now contain less noise and are the input of the support vector regression forecasting model. Their work was important for the development of the proposed method, as we believe that the ABM approach can then be used to diminish the noise in the market, by using a separate class of agents dedicated to model it.
+% The work by Lu, Lee, and Chiu \cite{Lu2009} point out the complexity of financial time series. They note its noisy nature and propose a technique to reduce this noise based in a two-stage modeling approach using independent component analysis and support vector regression. Their approach first uses independent component analysis for generating independent components to identify and remove those containing the noise, then the remaining components are used to reconstruct the forecasting variables which now contain less noise and are the input of the support vector regression forecasting model. Their work was important for the development of the proposed method, as we believe that the ABM approach can then be used to diminish the noise in the market, by using a separate class of agents dedicated to model it.
 
-Lastly, it is imperative to mention the use of neural networks in regression tasks, as it is a technique that has been proved to be very effective for this kind of problems. O'Connor and Madden \cite{Connor2005} obtained some remarkable results where they obtained an annual 23.5\% of rate of investment (ROI) on Dow Jones data used for training and testing. Another example is given by Castillo and Melin \cite{castillo2001simulation}, where they compare different hybrid architectures that combine neural networks and fuzzy logic for the prediction of financial time series.
+% Lastly, it is imperative to mention the use of neural networks in regression tasks, as it is a technique that has been proved to be very effective for this kind of problems. O'Connor and Madden \cite{Connor2005} obtained some remarkable results where they obtained an annual 23.5\% of rate of investment (ROI) on Dow Jones data used for training and testing. Another example is given by Castillo and Melin \cite{castillo2001simulation}, where they compare different hybrid architectures that combine neural networks and fuzzy logic for the prediction of financial time series.
 
-\subsection{Multi-agent Systems}
-\label{multi-agent-systems}
+% \subsection{Multi-agent Systems}
+% \label{multi-agent-systems}
 
-The core algorithm of the proposed method is, at its highest level, a multi-agent system. It is therefore paramount to mention some related works which use MAS for the forecast or understanding of financial markets.
+The core algorithm of the proposed method is, at its highest level, a
+multi-agent system. It is therefore paramount to mention some related
+works which use MAS for the forecast or understanding of financial
+markets. 
 
 Klingert and Meyer \cite{Klingert_2012} implement a MAS to analyze the effect of two market mechanisms: the continuous double auction and logarithmic market scoring rule. The purpose of the agent-based simulation model is to see the effect on the number of trades, the accuracy of prediction markets and the standard deviation of the prices in order to prove three hypothesis that they propose. In the end, due to a higher amount of trades and lower standard deviation of the price, their results indicate that the logarithmic market scoring rule seems to have an advantage over the other mechanism.
 
@@ -190,15 +201,20 @@ The authors of this work gained useful knowledge about MAS from two theses. The 
 
 As a final mention, Samanidou et al. \cite{Samanidou_2007}, provides the reader a very comprehensive overview of ABM, where different techniques to perform this kind of models are discussed.
 
-\subsection{Genetic Algorithms}
-\label{genetic-algorithms}
+% \subsection{Genetic Algorithms}
+% \label{genetic-algorithms}
 
-In the proposed method, GP is used to generate the MF of the FIS that act as the agents' functions. The use of evolutionary algorithms to generate MF has been proposed before in several works. What follows is the mention of two works which use genetic algorithms to perform such a task, and in Subsection \ref{genetic-programming}, one can find more specialized works where GP is used.
+In the proposed method, GP is used to generate the MF of the FIS that
+act as the agents' functions. The use of evolutionary algorithms to
+generate MF has been proposed before in several works. What follows is
+the mention of two works which use genetic algorithms to perform such
+a task, and in Subsection \ref{genetic-programming}, one can find more
+specialized works where GP is used.
 
 Thrift \cite{Thrift1991} explores a nowadays widely used technique which involves the use of a genetic algorithm to discover the parameters of the MF in a FIS to obtain better performance. Homaifar and McCormick \cite{Homaifar1995} go further and use a genetic algorithm to simultaneously design the MF and the rule sets for fuzzy logic controllers.
 
-\subsection{Genetic Programming}
-\label{genetic-programming}
+% \subsection{Genetic Programming}
+% \label{genetic-programming}
 
 GP has been previously used in many fields of economics. Commonly, GP is used to create regression models or as a mean to find a better architecture in trading strategies. In the proposed method, GP is used to generate the MF of the FIS that serve as the agents' functions in the MAS, an uncommon technique, as far as the authors of this work know. What follows is a set of works of some common uses of GP in financial applications.
 
@@ -212,16 +228,42 @@ Chen and Yeh \cite{Chen2001} propose an architecture based on GP and ABM that ta
 
 As a final mention, Bastian \cite{Bastian2000} uses GP to identify the input variables, the rule base, and the involved membership functions of fuzzy models.
 
-\subsection{Fuzzy Prediction}
-\label{fuzzy-prediction}
+% \subsection{Fuzzy Prediction}
+% \label{fuzzy-prediction}
 
-As has been previously mentioned, in this work each agent uses a FIS as its agent's function. The agent function has the objective to determine how much "trading force" an agent has to provide, so the sum of all the agent forces give a zero-sum system. FIS have successfully been used to predict financial markets in the past. This Subsection provides a series of works which use fuzzy logic and other related techniques to the proposed method, as a mean to forecast financial markets.
+As has been previously mentioned, in this work each agent uses a FIS
+as its agent's function. The agent function has the objective to
+determine how much "trading force" an agent has to provide, so the sum
+of all the agent forces give a zero-sum system. FIS have successfully
+been used to predict financial markets in the past. This Subsection
+provides a series of works which use fuzzy logic and other related
+techniques to the proposed method, as a mean to forecast financial
+markets. 
 
-Ijegwa et al. \cite{Ijegwa2014}, crated a FIS that uses four TI as input and the output is a recommendation to buy, sell or hold in a financial market. This way, their system aids the trader in the decision making process. They decided to use the moving average convergence/divergence, relative strength index, stochastic oscillator and on-balance volume as the TI inputs for the FIS.
+Ijegwa et al. \cite{Ijegwa2014}, crated a FIS that uses four TI as
+input and the output is a recommendation to buy, sell or hold in a
+financial market. This way, their system aids the trader in the
+decision making process. They decided to use the moving average
+convergence/divergence, relative strength index, stochastic oscillator
+and on-balance volume as the TI inputs for the FIS. 
 
-Huang, Pasquier, and Quek \cite{Huang2009} describe the application of a hierarchical coevolutionary fuzzy system called HiCEFS for predicting financial time series. Their system is based on the TI price percentage oscillator. An interesting part of this work is their use of irregular shaped membership functions (ISMF). The employment of ISMF allows their system to construct an accurate predictive model, and it outperforms the simple buy-and-hold strategy.
+Huang, Pasquier, and Quek \cite{Huang2009} describe the application of
+a hierarchical coevolutionary fuzzy system called HiCEFS for
+predicting financial time series. Their system is based on the TI
+price percentage oscillator. An interesting part of this work is their
+use of irregular shaped membership functions (ISMF). The employment of
+ISMF allows their system to construct an accurate predictive model,
+and it outperforms the simple buy-and-hold strategy. 
 
-As a final mention, a robust system that combines MAS, fuzzy logic, genetic algorithms, and moving averages as input to the fuzzy inference systems was implemented by Gamil, et al. \cite{Gamil2007}. The MAS helps in the gathering of stock information from different information sources, and aids the processing of the system, as the necessary processing power needed to predict the buy/sell decisions need more power to do the job efficiently, so using different agents for decision support was useful.
+As a final mention, a robust system that combines MAS, fuzzy logic,
+genetic algorithms, and moving averages as input to the fuzzy
+inference systems was implemented by Gamil, et
+al. \cite{Gamil2007}. The MAS helps in the gathering of stock
+information from different information sources, and aids the
+processing of the system, as the necessary processing power needed to
+predict the buy/sell decisions need more power to do the job
+efficiently, so using different agents for decision support was
+useful. 
 
 \subsection{Decision Support Systems}
 \label{decision-support-systems}
