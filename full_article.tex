@@ -21,15 +21,13 @@
 \newif\iflatexml\latexmlfalse
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG}
 
-
-
 \begin{document}
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 \title{A Novel Method Based on Fuzzy Inference Systems, Multi-agent Systems and Genetic Programming for the Forecast of Financial Markets}
 
-\author{\authorname{Amaury Hernandez-Aguila\sup{1}, Mario García Valdez\sup{1}, JJ Merelo\sup{2}}
+\author{\authorname{Amaury Hernandez-Aguila\sup{1}, Mario Garc\'ia Valdez\sup{1}, JJ Merelo\sup{2}}
   \affiliation{\sup{1}Instituto Tecnológico de Tijuana}
   \affiliation{\sup{2}CITIC/Universidad de Granada}
   \email{amherag@gmail.com,mariosky@gmail.com, jjmerelo@gmail.com}
@@ -289,8 +287,9 @@ As a final experiment, the proposed method performs a pure regression task, wher
 
 To compare the efficacy of the proposed method with, and without dynamic adaptation of the replace chance, two experiments were performed and then compared using a hypothesis test. 30 experiments were run with certain configuration, for 1000 generations each, with a constant value of replace chance. Then, 30 experiments were run with the same configuration, for 1000 generations each, but now with a FIS controlling the replace chance according to the stagnation index explained in Subsection \ref{dynamic-adaptation-of-the-replace-chance}. The error is recorded for each of the 1000 generations, and after one of the experiments is finished, an average of the error for the 1000 generations is calculated. This process is repeated for each of the 60 experiments. Table \ref{dynamic-vs-non-dynamic-table} shows the averages of these experiments.
 
-\begin{table}
-    \caption{{Average Errors - Dynamic vs. Fixed Mutation}}
+\begin{table*}
+  \caption{Average Errors - Dynamic vs. Fixed Mutation}
+  \centering
     \label{dynamic-vs-non-dynamic-table}
     \begin{tabular}{ c c | c c}
         \multicolumn{2}{c}{Without Dynamic Adaptation} & \multicolumn{2}{c}{With Dynamic Adaptation} \\ 
@@ -310,7 +309,7 @@ To compare the efficacy of the proposed method with, and without dynamic adaptat
          1247.161813 & 1215.320663 & 1173.268224 & 1309.74542  \\
          1025.353754 & 1173.167377 & 1169.425716 & 978.8573602 \\
     \end{tabular} 
-\end{table}
+\end{table*}
 
 The design of the FIS is rather simple. The input of the FIS is the stagnation index, and the output is the new replace chance for the GP system in that particular iteration or generation. The input MF are depicted in Figure \ref{dynamic-adaptation-input} and the output MF are depicted in Figure \ref{dynamic-adaptation-output}. The design of these MF were obtained according to the subjective opinion of the authors, and by trial and error. The rule set is presented below:
 
@@ -332,9 +331,10 @@ Brown, et al. \cite{brown2013dynamic} used their method to run a set of 8 trials
 
 The authors of this work don't consider this experiment to be enough to prove the efficacy of the proposed method. Nevertheless, we provide an experiment similar to theirs in order to compare results. Table \ref{best-trial-table} shows what stocks our proposed method chose, along with the total rate of return. In this case, it outperformed the results obtained by Brown, et al.
     
-\begin{table}
+\begin{table*}
     \caption{{Stocks Selection for Trial 4}} 
     \label{best-trial-table}
+    \centering
     \begin{tabular}{ c c c c c c c }
         Week & Stock & Return &  & Week & Stock & Return \\ 
         1 & MMM & 0.58265 &  & 8 & MMM & 1.27858 \\ 
@@ -345,7 +345,7 @@ The authors of this work don't consider this experiment to be enough to prove th
         6 & HD & 0.216626 &  & 13 & PFE & 3.23383 \\ 
         7 & HD & 0.981194 &  & Total &  & 16.489065 \\ 
     \end{tabular}
-\end{table}
+\end{table*}
 
 As mentioned before, Figure \ref{8-trials} shows a graphical representation of the results obtained from the 8 trials, where the quarterly return and the average weekly return are shown. In this case, the average rate of return of the 8 trials was 8.1140\%, which again outperforms the average obtained by Brown, et al., which was 7.075\%.
 
@@ -357,8 +357,9 @@ The first extended experiment consists on providing the proposed method certain 
 
 This experiment is similar to that presented by Brown, et al., with the difference that 30 trials are run instead of 8, and different configurations of the proposed method are used. The results are shown in Table \ref{table-rates-of-return}.
 
-\begin{table}
-\caption{{Choosing what Stock to Buy - Variable Configurations}}
+\begin{table*}
+  \caption{{Choosing what Stock to Buy - Variable Configurations}}
+  \centering
 \label{table-rates-of-return}
     \begin{tabular}{ c c c c c c }
          & \multicolumn{5}{c}{NUMBER OF AGENTS} \\ 
@@ -370,80 +371,80 @@ This experiment is similar to that presented by Brown, et al., with the differen
             40      & 3.35\% & 4.07\% & 0.58\% & 4.13\% & 2.53\% \\ 
             80      & 1.48\% & 0.85\% & 3.34\% & 5.61\% & 2.81\% \\ 
     \end{tabular} 
-\end{table}
+\end{table*}
 
 A heatmap is provided in Figure \ref{rates-of-return-heatmap} for the reader in order to better appreciate the results obtained.
 
-\subsubsection{Extended Experiments - Variable Configurations, Predicion of Single Stocks}
+% \subsubsection{Extended Experiments - Variable Configurations, Predicion of Single Stocks}
 
-In this series of experiments, instead of choosing what stock to buy, a single stock is chosen, and the algorithm had to determine if the trader had to buy or sell that particular stock. The following tables show the rate of return achieved, along with the number of correct predictions (if the trader should sell or buy) enclosed in parentheses. The results are shown for each of the configurations in the following Tables (\ref{aa-ror-table} \ref{csco-ror-table} \ref{ibm-ror-table} \ref{ko-ror-table} \ref{msft-ror-table}), along with corresponding heatmaps (\ref{aa-ror-heatmap} \ref{csco-ror-heatmap} \ref{ibm-ror-heatmap} \ref{ko-ror-heatmap} \ref{msft-ror-heatmap}) that help the reader see what configurations worked better.
+% In this series of experiments, instead of choosing what stock to buy, a single stock is chosen, and the algorithm had to determine if the trader had to buy or sell that particular stock. The following tables show the rate of return achieved, along with the number of correct predictions (if the trader should sell or buy) enclosed in parentheses. The results are shown for each of the configurations in the following Tables (\ref{aa-ror-table} \ref{csco-ror-table} \ref{ibm-ror-table} \ref{ko-ror-table} \ref{msft-ror-table}), along with corresponding heatmaps (\ref{aa-ror-heatmap} \ref{csco-ror-heatmap} \ref{ibm-ror-heatmap} \ref{ko-ror-heatmap} \ref{msft-ror-heatmap}) that help the reader see what configurations worked better.
 
-\begin{table}
-\caption{{American Airlines Rates of Return}}
-\label{aa-ror-table}
-    \begin{tabular}{ c c c c c }
-         & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
-        GENERATIONS & 2           & 4           & 6          & 8           \\ 
-        5           & -5.77\% (6) & 6.50\% (8)  & 9.57\% (9) & 12.30\% (8) \\ 
-        10          & -5.77\% (6) & 6.50\% (8)  & 7.68\% (8) & 12.30\% (8) \\ 
-        15          & -5.77\% (6) & 6.50\% (8)  & 7.68\% (8) & 12.30\% (8) \\ 
-        30          & -5.77\% (6) & 14.95\% (9) & 7.68\% (8) & 9.13\% (8)  \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+% \caption{{American Airlines Rates of Return}}
+% \label{aa-ror-table}
+%     \begin{tabular}{ c c c c c }
+%          & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
+%         GENERATIONS & 2           & 4           & 6          & 8           \\ 
+%         5           & -5.77\% (6) & 6.50\% (8)  & 9.57\% (9) & 12.30\% (8) \\ 
+%         10          & -5.77\% (6) & 6.50\% (8)  & 7.68\% (8) & 12.30\% (8) \\ 
+%         15          & -5.77\% (6) & 6.50\% (8)  & 7.68\% (8) & 12.30\% (8) \\ 
+%         30          & -5.77\% (6) & 14.95\% (9) & 7.68\% (8) & 9.13\% (8)  \\ 
+%     \end{tabular} 
+% \end{table}
   
-\begin{table}
-\caption{{CISCO Rates of Return}}
-\label{csco-ror-table}
-    \begin{tabular}{ c c c c c }
-         & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
-        GENERATIONS & 2           & 4           & 6             & 8           \\ 
-        5           & 15.38\% (8) & 26.60\% (10) & 14.42\% (10) & 12.62\% (10) \\ 
-        10          & 15.38\% (8) & 26.60\% (10) & 14.42\% (10) & 19.62\% (10) \\ 
-        15          & 15.38\% (8) & 26.60\% (10) & 13.46\% (9)  & 15.15\% (9) \\ 
-        30          & 13.02\% (7) & 26.60\% (10) & 13.46\% (9)  & 19.62\% (10)  \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+% \caption{{CISCO Rates of Return}}
+% \label{csco-ror-table}
+%     \begin{tabular}{ c c c c c }
+%          & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
+%         GENERATIONS & 2           & 4           & 6             & 8           \\ 
+%         5           & 15.38\% (8) & 26.60\% (10) & 14.42\% (10) & 12.62\% (10) \\ 
+%         10          & 15.38\% (8) & 26.60\% (10) & 14.42\% (10) & 19.62\% (10) \\ 
+%         15          & 15.38\% (8) & 26.60\% (10) & 13.46\% (9)  & 15.15\% (9) \\ 
+%         30          & 13.02\% (7) & 26.60\% (10) & 13.46\% (9)  & 19.62\% (10)  \\ 
+%     \end{tabular} 
+% \end{table}
 
-\begin{table}
-\caption{{IBM Rates of Return}}
-\label{ibm-ror-table}
-    \begin{tabular}{ c c c c c }
-         & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
-        GENERATIONS & 2            & 4           & 6             & 8           \\ 
-        5           & -10.43\% (5) & -12.17\% (5) & 1.65\% (9) & -4.16\% (6) \\ 
-        10          & -5.76\% (6)  & -4.18\% (7) & -1.85\% (8) & -2.29\% (6) \\ 
-        15          & -9.98\% (6)  & -7.21\% (5) & -6.69\% (7)  & -2.65\% (5) \\ 
-        30          & -4.58\% (6)  & -9.61\% (6) & 2.99\% (8)  & -1.10\% (7)  \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+% \caption{{IBM Rates of Return}}
+% \label{ibm-ror-table}
+%     \begin{tabular}{ c c c c c }
+%          & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
+%         GENERATIONS & 2            & 4           & 6             & 8           \\ 
+%         5           & -10.43\% (5) & -12.17\% (5) & 1.65\% (9) & -4.16\% (6) \\ 
+%         10          & -5.76\% (6)  & -4.18\% (7) & -1.85\% (8) & -2.29\% (6) \\ 
+%         15          & -9.98\% (6)  & -7.21\% (5) & -6.69\% (7)  & -2.65\% (5) \\ 
+%         30          & -4.58\% (6)  & -9.61\% (6) & 2.99\% (8)  & -1.10\% (7)  \\ 
+%     \end{tabular} 
+% \end{table}
 
-\begin{table}
-\caption{{The Coca-Cola Co. Rates of Return}}
-\label{ko-ror-table}
-    \begin{tabular}{ c c c c c }
-         & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
-        GENERATIONS & 2            & 4           & 6             & 8           \\ 
-        5           & -8.02\% (5)  & 1.86\% (6)  & 2.19\% (7)    & -1.93\% (7) \\ 
-        10          & -9.59\% (4)  & -4.76\% (5) & -3.51\% (7)   & 0.58\% (9) \\ 
-        15          & -7.87\% (6)  & -0.81\% (6) & -1.43\% (7)   & 4.69\% (8) \\ 
-        30          & -8.02\% (5)  & -8.08\% (5) & -4.43\% (6)   & -7.03\% (6)  \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+% \caption{{The Coca-Cola Co. Rates of Return}}
+% \label{ko-ror-table}
+%     \begin{tabular}{ c c c c c }
+%          & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
+%         GENERATIONS & 2            & 4           & 6             & 8           \\ 
+%         5           & -8.02\% (5)  & 1.86\% (6)  & 2.19\% (7)    & -1.93\% (7) \\ 
+%         10          & -9.59\% (4)  & -4.76\% (5) & -3.51\% (7)   & 0.58\% (9) \\ 
+%         15          & -7.87\% (6)  & -0.81\% (6) & -1.43\% (7)   & 4.69\% (8) \\ 
+%         30          & -8.02\% (5)  & -8.08\% (5) & -4.43\% (6)   & -7.03\% (6)  \\ 
+%     \end{tabular} 
+% \end{table}
 
-\begin{table}
-\caption{{Microsoft Rates of Return}}
-\label{msft-ror-table}
-    \begin{tabular}{ c c c c c }
-         & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
-        GENERATIONS & 2            & 4           & 6             & 8           \\ 
-        5           & 8.35\% (10)  & 12.26\% (11) & 6.19\% (9)   & -1.52\% (8) \\ 
-        10          & 11.82\% (10) & 12.26\% (11) & 1.48\% (7)   & 6.97\% (9) \\ 
-        15          & 8.35\% (10)  & 12.26\% (11) & 11.74\% (10) & 6.97\% (9) \\ 
-        30          & 8.35\% (10)  & 12.26\% (11) & 11.74\% (10) & 2.42\% (9)  \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+% \caption{{Microsoft Rates of Return}}
+% \label{msft-ror-table}
+%     \begin{tabular}{ c c c c c }
+%          & \multicolumn{4}{c}{TRAINING SET SIZE} \\ 
+%         GENERATIONS & 2            & 4           & 6             & 8           \\ 
+%         5           & 8.35\% (10)  & 12.26\% (11) & 6.19\% (9)   & -1.52\% (8) \\ 
+%         10          & 11.82\% (10) & 12.26\% (11) & 1.48\% (7)   & 6.97\% (9) \\ 
+%         15          & 8.35\% (10)  & 12.26\% (11) & 11.74\% (10) & 6.97\% (9) \\ 
+%         30          & 8.35\% (10)  & 12.26\% (11) & 11.74\% (10) & 2.42\% (9)  \\ 
+%     \end{tabular} 
+% \end{table}
 
-\subsubsection{Extended Experiments - Constant Configuration, Predicion of Every Stock}
+\subsubsection{Extended Experiments - Constant Configuration, Prediction of Every Stock}
 
 Experiments were performed for each of the 30 stocks provided in the dataset. As in previous experiments, 12 weeks were used as training and the next 13 weeks were used for testing. The proposed method tries to predict if the trader has to sell or buy each of the stocks, and for each successful or unsuccessful prediction, a positive or negative rate of return is accumulated, respectively. This process is repeated 30 times for each stock, and the results presented in Table \ref{avg-rates-of-return-table}.
 
@@ -502,49 +503,6 @@ The final experiment consisted on creating regression models to predict the Dire
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=1.00\columnwidth]{figures/stagnation-input/stagnation-input}
@@ -601,45 +559,45 @@ The final experiment consisted on creating regression models to predict the Dire
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-aa-heatmap/rates-of-return-aa-heatmap}
-\caption{{\label{aa-ror-heatmap}American Airlines Rates of Return Heatmap%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-aa-heatmap/rates-of-return-aa-heatmap}
+% \caption{{\label{aa-ror-heatmap}American Airlines Rates of Return Heatmap%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-csco-heatmap/rates-of-return-csco-heatmap}
-\caption{{\label{csco-ror-heatmap}CISCO Rates of Return Heatmap%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-csco-heatmap/rates-of-return-csco-heatmap}
+% \caption{{\label{csco-ror-heatmap}CISCO Rates of Return Heatmap%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-ibm-heatmap/rates-of-return-ibm-heatmap}
-\caption{{\label{ibm-ror-heatmap}IBM Rates of Return Heatmap%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-ibm-heatmap/rates-of-return-ibm-heatmap}
+% \caption{{\label{ibm-ror-heatmap}IBM Rates of Return Heatmap%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-ko-heatmap/rates-of-return-ko-heatmap}
-\caption{{\label{ko-ror-heatmap}The Coca-Cola Co. Rates of Return Heatmap%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-ko-heatmap/rates-of-return-ko-heatmap}
+% \caption{{\label{ko-ror-heatmap}The Coca-Cola Co. Rates of Return Heatmap%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-msft-heatmap/rates-of-return-msft-heatmap}
-\caption{{\label{msft-ror-heatmap}Microsoft Rates of Return Heatmap%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-msft-heatmap/rates-of-return-msft-heatmap}
+% \caption{{\label{msft-ror-heatmap}Microsoft Rates of Return Heatmap%
+% }}
+% \end{center}
+% \end{figure}
 
 \begin{figure}[h!]
 \begin{center}
