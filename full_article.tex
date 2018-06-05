@@ -615,78 +615,78 @@ Experiments were performed for each of the 30 stocks provided in the dataset. As
     \end{tabular}
 \end{table}
   
-\subsubsection{Extended Experiments - Directional Strength Prediction}
+% \subsubsection{Extended Experiments - Directional Strength Prediction}
   
-The final experiment consisted on creating regression models to predict the Directional Strength of a stock. The chosen stock was American Airlines, and the configuration of the Proposed Method was 4 communities, 100 agents per community, 3 inputs (the 3 Technical Indicators), and 5 outputs. The high number of agents was chosen to demonstrate how the method behaves with such a higher number. Three experiments were performed: the first one was run for 10 generations, the second one for 100 generations, and the third one for 1000 generations. The objective of this experiment was to demonstrate that with higher generations, the method can decrease the error. The objective was achieved, as can be seen in Table \ref{ds-mse-table}. The curve-fitting charts can be found in Figure \ref{ds-prediction-10} (10 generations), Figure \ref{ds-prediction-100} (100 generations), and Figure \ref{ds-prediction-1000} (1000 generations).
+% The final experiment consisted on creating regression models to predict the Directional Strength of a stock. The chosen stock was American Airlines, and the configuration of the Proposed Method was 4 communities, 100 agents per community, 3 inputs (the 3 Technical Indicators), and 5 outputs. The high number of agents was chosen to demonstrate how the method behaves with such a higher number. Three experiments were performed: the first one was run for 10 generations, the second one for 100 generations, and the third one for 1000 generations. The objective of this experiment was to demonstrate that with higher generations, the method can decrease the error. The objective was achieved, as can be seen in Table \ref{ds-mse-table}. The curve-fitting charts can be found in Figure \ref{ds-prediction-10} (10 generations), Figure \ref{ds-prediction-100} (100 generations), and Figure \ref{ds-prediction-1000} (1000 generations).
 
-\begin{table}
-    \caption{{Directional Strength Prediction}}
-    \label{ds-mse-table}
-    \begin{tabular}{ c c }
-        Generations & abs(MSE + sum of forces) \\ 
-        10 & 4430.62 \\ 
-        100 & 2573.73 \\ 
-        1000 & 2310.74 \\ 
-    \end{tabular} 
-\end{table}
+% \begin{table}
+%     \caption{{Directional Strength Prediction}}
+%     \label{ds-mse-table}
+%     \begin{tabular}{ c c }
+%         Generations & abs(MSE + sum of forces) \\ 
+%         10 & 4430.62 \\ 
+%         100 & 2573.73 \\ 
+%         1000 & 2310.74 \\ 
+%     \end{tabular} 
+% \end{table}
   
   
   
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/stagnation-input/stagnation-input}
-\caption{{\label{dynamic-adaptation-input}Input for the Dynamic Adaptation of the Replace Chance%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/stagnation-input/stagnation-input}
+% \caption{{\label{dynamic-adaptation-input}Input for the Dynamic Adaptation of the Replace Chance%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/stagnation-output/stagnation-output}
-\caption{{\label{dynamic-adaptation-output}Output for the Dynamic Adaptation of the Replace Chance%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/stagnation-output/stagnation-output}
+% \caption{{\label{dynamic-adaptation-output}Output for the Dynamic Adaptation of the Replace Chance%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/fis-vs-no-fis/fis-vs-no-fis}
-\caption{{\label{with-vs-without-dynamic}Dynamic Adaptation of Replace Chance vs Constant Replace Chance%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/fis-vs-no-fis/fis-vs-no-fis}
+% \caption{{\label{with-vs-without-dynamic}Dynamic Adaptation of Replace Chance vs Constant Replace Chance%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/dynamic-parameter-statistical-test/dynamic-parameter-statistical-test}
-\caption{{\label{dynamic-hypothesis-test}Hypothesis Test for the Dynamic Adaptation of the Replace Chance%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/dynamic-parameter-statistical-test/dynamic-parameter-statistical-test}
+% \caption{{\label{dynamic-hypothesis-test}Hypothesis Test for the Dynamic Adaptation of the Replace Chance%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/percent-return-per-trial/percent-return-per-trial}
-\caption{{\label{8-trials}Rate of Return of the 8 Trials%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/percent-return-per-trial/percent-return-per-trial}
+% \caption{{\label{8-trials}Rate of Return of the 8 Trials%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/avg-rate-of-return/avg-rate-of-return}
-\caption{{\label{constant-configuration-generations}Experiments of the Proposed Method with a Constant Configuration and Increasing Generations%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/avg-rate-of-return/avg-rate-of-return}
+% \caption{{\label{constant-configuration-generations}Experiments of the Proposed Method with a Constant Configuration and Increasing Generations%
+% }}
+% \end{center}
+% \end{figure}
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-heatmap/rates-of-return-heatmap}
-\caption{{\label{rates-of-return-heatmap}What stock to choose%
-}}
-\end{center}
-\end{figure}
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-heatmap/rates-of-return-heatmap}
+% \caption{{\label{rates-of-return-heatmap}What stock to choose%
+% }}
+% \end{center}
+% \end{figure}
 
 % \begin{figure}[h!]
 % \begin{center}
