@@ -191,42 +191,95 @@ multi-agent system. It is therefore paramount to mention some related
 works which use MAS for the forecast or understanding of financial
 markets. 
 
-Klingert and Meyer \cite{Klingert_2012} implement a MAS to analyze the effect of two market mechanisms: the continuous double auction and logarithmic market scoring rule. The purpose of the agent-based simulation model is to see the effect on the number of trades, the accuracy of prediction markets and the standard deviation of the prices in order to prove three hypothesis that they propose. In the end, due to a higher amount of trades and lower standard deviation of the price, their results indicate that the logarithmic market scoring rule seems to have an advantage over the other mechanism.
+Klingert and Meyer \cite{Klingert_2012} implement a MAS to analyze the
+effect of two market mechanisms: the continuous double auction and
+logarithmic market scoring rule. The purpose of the agent-based
+simulation model is to see the effect on the number of trades, the
+accuracy of prediction markets and the standard deviation of the
+prices in order to prove three hypothesis that they propose. In the
+end, due to a higher amount of trades and lower standard deviation of
+the price, their results indicate that the logarithmic market scoring
+rule seems to have an advantage over the other mechanism. 
 
-Sherstov and Stone \cite{Sherstov2005} present three automated stock-trading agents which follow different strategies to predict financial markets, and are compared. The first agent uses reinforcement learning, the second a trend-following strategy, and the last one market-making. These agents are part of a MAS where the better performing agent is chosen for the testing phase.
+Sherstov and Stone \cite{Sherstov2005} present three automated
+stock-trading agents which follow different strategies to predict
+financial markets, and are compared. The first agent uses
+reinforcement learning, the second a trend-following strategy, and the
+last one market-making. These agents are part of a MAS where the
+better performing agent is chosen for the testing phase. 
 
-Kendall and Su \cite{Kendall2003} use a MAS to simulate stock markets within which stock traders are modeled as heterogeneous adaptive artificial agents. On average, 80\% of the artificial stock traders were able to trade using successful trading strategies which brings the investors higher returns compared to a simple buy-and-hold strategy.
+Kendall and Su \cite{Kendall2003} use a MAS to simulate stock markets
+within which stock traders are modeled as heterogeneous adaptive
+artificial agents. On average, 80\% of the artificial stock traders
+were able to trade using successful trading strategies which brings
+the investors higher returns compared to a simple buy-and-hold
+strategy. 
 
-The authors of this work gained useful knowledge about MAS from two theses. The first one is the work from Grothmann \cite{Grothmann2002}. This work served as inspiration for the architecture of the proposed method. The second thesis is by Boer-Sorbán \cite{Boer-Sorban2008}, which gave an overview of approaches to describe and understand financial market's dynamics, and motivated the authors of this work to use the approach of agent-based computation to perform financial forecast.
+The authors of this work gained useful knowledge about MAS from two
+theses. The first one is the work from Grothmann
+\cite{Grothmann2002}. This work served as inspiration for the
+architecture of the proposed method. The second thesis is by
+Boer-Sorbán \cite{Boer-Sorban2008}, which gave an overview of
+approaches to describe and understand financial market's dynamics, and
+motivated the authors of this work to use the approach of agent-based
+computation to perform financial forecast. 
 
-As a final mention, Samanidou et al. \cite{Samanidou_2007}, provides the reader a very comprehensive overview of ABM, where different techniques to perform this kind of models are discussed.
+% As a final mention, Samanidou et al. \cite{Samanidou_2007}, provides the reader a very comprehensive overview of ABM, where different techniques to perform this kind of models are discussed.
 
 % \subsection{Genetic Algorithms}
 % \label{genetic-algorithms}
 
-In the proposed method, GP is used to generate the MF of the FIS that
-act as the agents' functions. The use of evolutionary algorithms to
-generate MF has been proposed before in several works. What follows is
-the mention of two works which use genetic algorithms to perform such
-a task, and in Subsection \ref{genetic-programming}, one can find more
-specialized works where GP is used.
+% In the method we propose in this paper, GP is used to generate the MF
+% of the FIS that 
+% act as the agents' functions. The use of evolutionary algorithms to
+% generate MF has been proposed before in several works. What follows is
+% the mention of two works which use genetic algorithms to perform such
+% a task, and in Subsection \ref{genetic-programming}, one can find more
+% specialized works where GP is used.
 
-Thrift \cite{Thrift1991} explores a nowadays widely used technique which involves the use of a genetic algorithm to discover the parameters of the MF in a FIS to obtain better performance. Homaifar and McCormick \cite{Homaifar1995} go further and use a genetic algorithm to simultaneously design the MF and the rule sets for fuzzy logic controllers.
+% Thrift \cite{Thrift1991} explores a nowadays widely used technique which involves the use of a genetic algorithm to discover the parameters of the MF in a FIS to obtain better performance. Homaifar and McCormick \cite{Homaifar1995} go further and use a genetic algorithm to simultaneously design the MF and the rule sets for fuzzy logic controllers.
 
 % \subsection{Genetic Programming}
 % \label{genetic-programming}
 
-GP has been previously used in many fields of economics. Commonly, GP is used to create regression models or as a mean to find a better architecture in trading strategies. In the proposed method, GP is used to generate the MF of the FIS that serve as the agents' functions in the MAS, an uncommon technique, as far as the authors of this work know. What follows is a set of works of some common uses of GP in financial applications.
+GP, the method used in this paper to generate the membership
+functions, has been previously used in many fields of
+economics, generally to create regression models or as a
+mean to find a better architecture in trading strategies. In the
+proposed method, GP is used to generate the MF of the FIS that serve
+as the agents' functions in the MAS, an uncommon technique; however,
+it is more common to find GP used in generating trading rules. For
+instance, Li and Tsang \cite{Li1999} developed a system that generates
+decision trees of TI using GP. Preliminary results showed that it
+outperforms commonly used, non-adaptive, individual technical rules
+with respect to prediction accuracy and average annualized rate of
+return over two different out-of-sample test periods (three and a half
+year in each period). 
 
-Li and Tsang \cite{Li1999} developed a system that generates decision trees of TI using GP. Preliminary results showed that it outperforms commonly used, non-adaptive, individual technical rules with respect to prediction accuracy and average annualized rate of return over two different out-of-sample test periods (three and a half year in each period).
+Garcia-Almanza and Tsang \cite{Garcia-Almanza2006} used GP as a
+regression tool and a technique called repository method to model
+"rare instances" or emergent phenomena. The repository method is a
+technique that analyses decision trees produced by GP to discover
+classification rules. It lets model the rare instances in different
+ways, increasing the possibility of identifying similar cases in the
+future in the time series. The work of Garcia-Almanza was useful for
+the authors of this work, as it noted the importance of determining
+this emergent phenomena in financial markets, and stressed the
+usefulness of ABM to model it. 
 
-Garcia-Almanza and Tsang \cite{Garcia-Almanza2006} used GP as a regression tool and a technique called repository method to model "rare instances" or emergent phenomena. The repository method is a technique that analyses decision trees produced by GP to discover classification rules. It lets model the rare instances in different ways, increasing the possibility of identifying similar cases in the future in the time series. The work of Garcia-Almanza was useful for the authors of this work, as it noted the importance of determining this emergent phenomena in financial markets, and stressed the usefulness of ABM to model it.
+An artificial market that models technical, fundamental, and noise
+traders was developed by Martinez-Jaramillo and Tsang
+\cite{Martinez-Jaramillo2009}. In this work GP is used to generate the
+agent functions \cite{russell2003artificial} of the technical traders,
+and TI were used as the operators for the GP algorithm. 
 
-An artificial market that models technical, fundamental, and noise traders was developed by Martinez-Jaramillo and Tsang \cite{Martinez-Jaramillo2009}. In this work GP is used to generate the agent functions \cite{russell2003artificial} of the technical traders, and TI were used as the operators for the GP algorithm.
+Closest to us is the work by Chen and Yeh \cite{Chen2001}, which
+propose an architecture based on GP and ABM that takes trader's
+(agents) search behavior densities, and by using simulated annealing,
+connect these behaviors to psychological factors, such as peer
+pressure or economic factors such as the standard of living. 
 
-Chen and Yeh \cite{Chen2001} propose an architecture based on GP and ABM that takes trader's (agents) search behavior densities, and by using simulated annealing, connect these behaviors to psychological factors, such as peer pressure or economic factors such as the standard of living.
-
-As a final mention, Bastian \cite{Bastian2000} uses GP to identify the input variables, the rule base, and the involved membership functions of fuzzy models.
+% As a final mention, Bastian \cite{Bastian2000} uses GP to identify the input variables, the rule base, and the involved membership functions of fuzzy models.
 
 % \subsection{Fuzzy Prediction}
 % \label{fuzzy-prediction}
@@ -255,15 +308,15 @@ use of irregular shaped membership functions (ISMF). The employment of
 ISMF allows their system to construct an accurate predictive model,
 and it outperforms the simple buy-and-hold strategy. 
 
-As a final mention, a robust system that combines MAS, fuzzy logic,
-genetic algorithms, and moving averages as input to the fuzzy
-inference systems was implemented by Gamil, et
-al. \cite{Gamil2007}. The MAS helps in the gathering of stock
-information from different information sources, and aids the
-processing of the system, as the necessary processing power needed to
-predict the buy/sell decisions need more power to do the job
-efficiently, so using different agents for decision support was
-useful. 
+% As a final mention, a robust system that combines MAS, fuzzy logic,
+% genetic algorithms, and moving averages as input to the fuzzy
+% inference systems was implemented by Gamil, et
+% al. \cite{Gamil2007}. The MAS helps in the gathering of stock
+% information from different information sources, and aids the
+% processing of the system, as the necessary processing power needed to
+% predict the buy/sell decisions need more power to do the job
+% efficiently, so using different agents for decision support was
+% useful. 
 
 % \subsection{Decision Support Systems}
 % \label{decision-support-systems}
@@ -272,7 +325,17 @@ useful.
 
 % The first work is by Keen \cite{keen1980decision}, which helped the authors of the present work to understand DSS. His work presents valuable definitions related to DSS, as well as design guidelines and a series of case studies that illustrate the process of creation of DSS.
 
-% Secondly, Tsang, et al. \cite{tsang1998eddie} \cite{tsang2000eddie} \cite{Tsang2004}  \cite{Tsang2008}, present a DSS, over a series of works, for financial forecasting called EDDIE. The system serves to improve the odds of a trader to perform successful trades, and is designed as an interactive decision tool, not as a replacement of expert knowledge. The performance of the system depends on the quality of user's input and the efficiency of its GP search engine.
+% Secondly, Tsang, et al. \cite{tsang1998eddie} \cite{tsang2000eddie}
+% \cite{Tsang2004}  \cite{Tsang2008}, present a DSS, over a series of
+% works, for financial forecasting called EDDIE. The system serves to
+% improve the odds of a trader to perform successful trades, and is
+% designed as an interactive decision tool, not as a replacement of
+% expert knowledge. The performance of the system depends on the
+% quality of user's input and the efficiency of its GP search engine.
+
+% It would be better to integrate this state of the art into a single
+% narrative, to show the kind of results that are obtained, not simply
+% mention past papers - JJ
 
 \section{Proposed Method}
 \label{proposed-method}
