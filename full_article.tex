@@ -345,7 +345,8 @@ and it outperforms the simple buy-and-hold strategy.
 
 The dataset used in this work was first used by Brown, Pelosi, and
 Dirska \cite{brown2013dynamic}, and can be found at the UCI Machine
-Learning Repository under the name of "Dow Jones Index Data Set." In
+Learning Repository under the name of "Dow Jones Index Data Set." % Justify this choice. - JJ
+In
 this work we only used the open, high, low, and close prices, and we
 obtained the average directional index (ADX), stochastic oscillator
 (SO), and relative strength index (RSI) for the dataset records by
@@ -354,9 +355,23 @@ http://www.freestockcharts.com/. We added the TI to the stocks
 provided in the dataset by Brown et al. using FreeStockCharts, and
 downloaded the full historical data from the platform. A filtering was
 performed where only the relevant records were extracted (the same
-records that are present in the benchmarking dataset). 
+records that are present in the benchmarking dataset). % Maybe make
+                                % the data available? - JJ
 
-As a final step, another attribute was added to the dataset, which the authors of this work call "directional strength." This attribute tells how strong a movement was at a particular time in a time series, and what its direction was (downtrend or uptrend). An absolute value of 100 of the directional strength means that it was a very strong movement, where all the traders in that financial market agree to buy or sell, and a value of 0 means strong indecision. The directional strength indicator could have already been mentioned in the literature, but the authors of this work couldn't find a reference to this particular formula. The formula to calculate the directional strength is as follows:
+As a final step, another attribute was added to the dataset, which the
+authors of this work call "directional strength." This attribute tells
+how strong a movement was at a particular time in a time series, and
+what its direction was (downtrend or uptrend). An absolute value of
+100 of the directional strength means that it was a very strong
+movement, where all the traders in that financial market agree to buy
+or sell, and a value of 0 means strong indecision. % half in one
+                                % direction and half in the other?
+                                % Clarify - JJ
+The directional
+strength indicator could have already been mentioned in the
+literature, but the authors of this work couldn't find a reference to
+this particular formula. The formula to calculate the directional
+strength is as follows: 
 
 \begin{equation} \label{directional-strength}
   DS(t) = 100{{C(t) - O(t)} \over {H(t) - L(t)}}
@@ -366,24 +381,47 @@ Where \textit{t} represents a particular point of time in a time series, \textit
 
 % \subsection{Decision Support System}
 
-The final outcome of the proposed method is a recommendation to buy,
+The final outcome of the proposed method is going to be a recommendation to buy,
 sell or hold in a financial market. The system tells the user the
-direction which the market is going to take (downtrend or uptrend) and
+direction the market is going to take (downtrend or uptrend) and
 its strength, through the use of the directional strength indicator
 % (see Subsection \ref{dataset})
 .
 
-Nevertheless, the underlying method can be used to perform regression
-tasks, and it could be extended to perform classification tasks in a
-future work. What follows is the explanation of this underlying
-method.
+% Nevertheless, the underlying method can be used to perform regression
+% tasks, and it could be extended to perform classification tasks in a
+% future work.
+% Maybe move to future work... - JJ
+
+
+%What follows is the explanation of this underlying
+%method.
 
 % \subsection{Communities of Agents}
 % \label{communities-of-agents}
 
-As has been noted before, the proposed method is based on ABM. To implement a system based on ABM, we developed the concept of a community of agents. A community is a collection of agents, who are the final actuators in the environment (the simulated financial market). The action of each of the agents in the community involves providing certain trading force, which is a value between -100 and 100. The sum of all of the forces of the agents in a community must be equal to the observed or real directional strength indicator for a particular record in the dataset. A community receives its inputs, which are the TI ADX(\textit{t}), SO(\textit{t}), and RSI(\textit{t}), and give as output the DS(\textit{t+1}) (the directional strength of a future record, i.e. one data point in the future).
+The proposed method is based on ABM for which we propose the concept
+of a community of agents,  a collection of agents, who
+are the final actuators in the environment and simulate the market
+actors. The action of each of the agents in the community involves 
+providing certain trading force, which is a value between -100 and
+100. The sum of all of the forces of the agents in a community must be
+equal to the observed or real directional strength indicator for a
+particular record in the dataset. A community receives its inputs,
+which are the ADX(\textit{t}), SO(\textit{t}), and RSI(\textit{t}) indicators,
+and outputs  $DS(t+1)$, the directional strength of a
+future record, i.e. one data point in the future. 
 
-The method creates several communities, which exchange genetic material of its agents among them, in order to produce better performing communities, and their fitness is determined using a sum of the mean-squared error (MSE) and the absolute value of the sum of the forces of its agents. The use of this summation was determined to be a good fitness indicator by trial and error, but other fitness functions can be used. A flowchart depicting the algorithm that creates a population of these communities is presented in Figure \ref{flowchart-without-dynamic}.
+The method creates several communities, which exchange genetic
+material of its agents among them, in order to produce better
+performing communities, and their fitness is determined using a sum of
+the mean-squared error (MSE) and the absolute value of the sum of the
+forces of its agents. The use of this summation was determined to be a
+good fitness indicator by trial and error, but other fitness functions
+can be used. A flowchart depicting the algorithm that creates a
+population of these communities is presented in Figure
+\ref{flowchart-without-dynamic}. % Maybe explain this GA a bit better?
+                                % Is it published somewhere? - JJ
 
 % \subsection{Fuzzy Inference Systems}
 
@@ -444,9 +482,19 @@ chance, which is currently being dynamically adapted by using a FIS.
 % See Subsection \ref{dynamic-adaptation-of-the-replace-chance}).
 One can see a flowchart of the general process in Figure \ref{flowchart-without-dynamic}.
 
-In addition to this set of operations, the GP algorithm uses the parameters of population size (in this case, the number of communities), the number of agents per community, the number of generations, how many inputs the agents will process (in this case, the TI), and how many outputs (which, in the end, as has been noted previously, get defuzzified into a directional strength value).
+In addition to this set of operations, the GP algorithm uses the
+parameters of population size (in this case, the number of
+communities), the number of agents per community, the number of
+generations, how many inputs the agents will process (in this case,
+the TI), and how many outputs (which, in the end, as has been noted
+previously, get defuzzified into a directional strength value). % A
+                                % table for this? - JJ
 
-How the proposed method generates the MF is a novel or, at least uncommon, method (the authors of this work could not find any works that use this specific technique). The GP algorithm uses a sum of sines to produce functions that are converted to the MF of the FIS of the agents. A graphical representation of an input MF and an output MF are depicted in Figure \ref{input-mf} and Figure \ref{output-mf}, respectively. The GP algorithm uses only two operators: the sum and the sine operators. The sum of sines is represented by Formula \ref{sum-of-sines}.
+We introduce in this paper a method  that generates the MF: The GP algorithm uses a sum of
+sines to produce functions that are converted to the MF of the FIS of
+the agents. A graphical representation of an input and output MF 
+are depicted in Figure \ref{output-mf}. The GP algorithm uses only two operators: the sum and
+the sine operators. The sum of sines is represented by
 
 \begin{equation} \label{sum-of-sines}
   y = \sum_{i=1}^{n} a_{i} sin(b_{i}x + c_{i})
@@ -482,11 +530,6 @@ A flowchart depicting the modified GP algorithm is shown in Figure \ref{flowchar
 \includegraphics[width=1.00\columnwidth]{figures/mf-input/mf-input}
 \caption{{\label{input-mf}Graphical Representation of an Input Membership Function%
 }}
-\end{center}
-\end{figure}
-
-\begin{figure}[h!]
-\begin{center}
 \includegraphics[width=1.00\columnwidth]{figures/mf-output/mf-output}
 \caption{{\label{output-mf}Graphical Representation of an Output Membership Function%
 }}
@@ -567,21 +610,28 @@ Brown, et al. \cite{brown2013dynamic} used their method to run a set of 8 trials
 
 The authors of this work don't consider this experiment to be enough to prove the efficacy of the proposed method. Nevertheless, we provide an experiment similar to theirs in order to compare results. Table \ref{best-trial-table} shows what stocks our proposed method chose, along with the total rate of return. In this case, it outperformed the results obtained by Brown, et al.
     
-\begin{table*}
+\begin{table}
     \caption{{Stocks Selection for Trial 4}} 
     \label{best-trial-table}
     \centering
-    \begin{tabular}{ c c c c c c c }
-        Week & Stock & Return &  & Week & Stock & Return \\ 
-        1 & MMM & 0.58265 &  & 8 & MMM & 1.27858 \\ 
-        2 & HD & 1.92256 &  & 9 & IBM & -2.01259 \\ 
-        3 & AA & 3.72861 &  & 10 & INTC & -1.92661 \\ 
-        4 & CSCO & 3.48494 &  & 11 & PFE & 0.896414 \\ 
-        5 & CSCO & 0.285551 &  & 12 & AA & 3.81731 \\ 
-        6 & HD & 0.216626 &  & 13 & PFE & 3.23383 \\ 
-        7 & HD & 0.981194 &  & Total &  & 16.489065 \\ 
+    \begin{tabular}{ c c r }
+Week & Stock & Return  \\ 
+1 & MMM & 0.58265 \\
+2 & HD & 1.92256 \\
+3 & AA & 3.72861 \\   
+4 & CSCO & 3.48494 \\  
+5 & CSCO & 0.285551 \\ 
+6 & HD & 0.216626 \\
+7 & HD & 0.981194 &
+8 & MMM & 1.27858 \\    
+9 & IBM & -2.01259 \\   
+10 & INTC & -1.92661 \\ 
+11 & PFE & 0.896414 \\  
+12 & AA & 3.81731 \\                                
+13 & PFE & 3.23383 \\                                                   
+Total &  & 16.489065 \\
     \end{tabular}
-\end{table*}
+\end{table}
 
 As mentioned before, Figure \ref{8-trials} shows a graphical representation of the results obtained from the 8 trials, where the quarterly return and the average weekly return are shown. In this case, the average rate of return of the 8 trials was 8.1140\%, which again outperforms the average obtained by Brown, et al., which was 7.075\%.
 
@@ -593,21 +643,21 @@ The first extended experiment consists on providing the proposed method certain 
 
 This experiment is similar to that presented by Brown, et al., with the difference that 30 trials are run instead of 8, and different configurations of the proposed method are used. The results are shown in Table \ref{table-rates-of-return}.
 
-\begin{table*}
+\begin{table}
   \caption{{Choosing what Stock to Buy - Variable Configurations}}
   \centering
 \label{table-rates-of-return}
     \begin{tabular}{ c c c c c c }
          & \multicolumn{5}{c}{NUMBER OF AGENTS} \\ 
-        GENERATIONS & 1      & 2      & 5      & 10     & 20     \\
-            2       & 1.27\% & 2.46\% & 2.33\% & 1.68\% & 2.44\% \\ 
-            5       & 3.22\% & 2.57\% & 0.97\% & 2.90\% & 3.70\% \\ 
-            10      & 1.82\% & 1.75\% & 3.04\% & 3.19\% & 3.14\% \\ 
-            20      & 2.32\% & 1.77\% & 2.28\% & 1.76\% & 4.82\% \\ 
-            40      & 3.35\% & 4.07\% & 0.58\% & 4.13\% & 2.53\% \\ 
-            80      & 1.48\% & 0.85\% & 3.34\% & 5.61\% & 2.81\% \\ 
+        GEN. & 1      & 2      & 5      & 10     & 20     \\
+        2       & 1.27\% & 2.46\% & 2.33\% & 1.68\% & 2.44\% \\ 
+        5       & 3.22\% & 2.57\% & 0.97\% & 2.90\% & 3.70\% \\ 
+        10      & 1.82\% & 1.75\% & 3.04\% & 3.19\% & 3.14\% \\ 
+        20      & 2.32\% & 1.77\% & 2.28\% & 1.76\% & 4.82\% \\ 
+        40      & 3.35\% & 4.07\% & 0.58\% & 4.13\% & 2.53\% \\ 
+        80      & 1.48\% & 0.85\% & 3.34\% & 5.61\% & 2.81\% \\ 
     \end{tabular} 
-\end{table*}
+\end{table}
 
 A heatmap is provided in Figure \ref{rates-of-return-heatmap} for the reader in order to better appreciate the results obtained.
 
