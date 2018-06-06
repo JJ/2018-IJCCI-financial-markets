@@ -366,9 +366,17 @@ Where \textit{t} represents a particular point of time in a time series, \textit
 
 % \subsection{Decision Support System}
 
-The final outcome of the proposed method is a recommendation to buy, sell or hold in a financial market. The system tells the user the direction which the market is going to take (downtrend or uptrend) and its strength, through the use of the directional strength indicator (see Subsection \ref{dataset}).
+The final outcome of the proposed method is a recommendation to buy,
+sell or hold in a financial market. The system tells the user the
+direction which the market is going to take (downtrend or uptrend) and
+its strength, through the use of the directional strength indicator
+% (see Subsection \ref{dataset})
+.
 
-Nevertheless, the underlying method can be used to perform regression tasks, and it could be extended to perform classification tasks in a future work. What follows is the explanation of this underlying method.
+Nevertheless, the underlying method can be used to perform regression
+tasks, and it could be extended to perform classification tasks in a
+future work. What follows is the explanation of this underlying
+method.
 
 % \subsection{Communities of Agents}
 % \label{communities-of-agents}
@@ -405,9 +413,36 @@ The rule set is depicted below, and is comprised of 15 rules: 5 outputs for each
 
 % \subsubsection{Genetic Programming}
 
-In order to create the MF, a GP algorithm performs a number of operations among the initially generated communities. These operations are the classical crossover and mutation operations, along with two new operations: migration and replace. The crossover operation simply chooses a subtree of the GP function of the \textit{i}th agent of a community A, and passes it to the GP function of the \textit{i}th agent of a Community B. A subtree from the community B is passed to the GP function of the \textit{i}th agent. As a result, two new agents are generated and replace the old agents. To determine what communities are to be crossed over, a tournament is held where two random communities are chosen from the population, and the one with the lowest MSE plus the absolute value of the sum of forces (as explained is Subsection \ref{communities-of-agents} is chosen; this will obtain the first community. This process is repeated to obtain a second community. As for the mutation operation, a subtree from a community A is selected and randomly changed to produce a new GP function. The community to be mutated is randomly selected from the population.
+In order to create the MF, a GP algorithm performs a number of
+operations among the initially generated communities. These operations
+are the classical crossover and mutation operations, along with two
+new operations: migration and replace. The crossover operation simply
+chooses a subtree of the GP function of the \textit{i}th agent of a
+community A, and passes it to the GP function of the \textit{i}th
+agent of a Community B. A subtree from the community B is passed to
+the GP function of the \textit{i}th agent. As a result, two new agents
+are generated and replace the old agents. To determine what
+communities are to be crossed over, a tournament is held where two
+random communities are chosen from the population, and the one with
+the lowest MSE plus the absolute value of the sum of forces (as
+explained above)
+% is Subsection \ref{communities-of-agents}
+is chosen; this will obtain the first community. This process is repeated to obtain a second community. As for the mutation operation, a subtree from a community A is selected and randomly changed to produce a new GP function. The community to be mutated is randomly selected from the population.
 
-The migration operation is a rather simple one. According to a migration chance, an agent from a community A will get interchanged with another agent from a community B. In order to determine if this interchange is to be performed, the algorithm checks if the sum of the forces of community A is of different sign than the sum of forces of community B. This ensures that the migration will produce a community closer to a zero-sum, i.e. the community will be closer to the observed or real prices. As for the replace operation, a whole new community is generated and replaces the community with the highest absolute value of the MSE plus sum of forces. All the four operations have a pre-established chance of occurring (except for the replace chance, which is currently being dynamically adapted by using a FIS. See Subsection \ref{dynamic-adaptation-of-the-replace-chance}). One can see a flowchart of the general process in Figure \ref{flowchart-without-dynamic}.
+The migration operation is a rather simple one. According to a
+migration chance, an agent from a community A will get interchanged
+with another agent from a community B. In order to determine if this
+interchange is to be performed, the algorithm checks if the sum of the
+forces of community A is of different sign than the sum of forces of
+community B. This ensures that the migration will produce a community
+closer to a zero-sum, i.e. the community will be closer to the
+observed or real prices. As for the replace operation, a whole new
+community is generated and replaces the community with the highest
+absolute value of the MSE plus sum of forces. All the four operations
+have a pre-established chance of occurring (except for the replace
+chance, which is currently being dynamically adapted by using a FIS.
+% See Subsection \ref{dynamic-adaptation-of-the-replace-chance}).
+One can see a flowchart of the general process in Figure \ref{flowchart-without-dynamic}.
 
 In addition to this set of operations, the GP algorithm uses the parameters of population size (in this case, the number of communities), the number of agents per community, the number of generations, how many inputs the agents will process (in this case, the TI), and how many outputs (which, in the end, as has been noted previously, get defuzzified into a directional strength value).
 
@@ -477,7 +512,16 @@ As a final experiment, the proposed method performs a pure regression task, wher
 
 \subsection{Dynamic Adaptation of the Replace Chance}
 
-To compare the efficacy of the proposed method with, and without dynamic adaptation of the replace chance, two experiments were performed and then compared using a hypothesis test. 30 experiments were run with certain configuration, for 1000 generations each, with a constant value of replace chance. Then, 30 experiments were run with the same configuration, for 1000 generations each, but now with a FIS controlling the replace chance according to the stagnation index explained in Subsection \ref{dynamic-adaptation-of-the-replace-chance}. The error is recorded for each of the 1000 generations, and after one of the experiments is finished, an average of the error for the 1000 generations is calculated. This process is repeated for each of the 60 experiments. Table \ref{dynamic-vs-non-dynamic-table} shows the averages of these experiments.
+To compare the efficacy of the proposed method with, and without
+dynamic adaptation of the replace chance, two experiments were
+performed and then compared using a hypothesis test. 30 experiments
+were run with certain configuration, for 1000 generations each, with a
+constant value of replace chance. Then, 30 experiments were run with
+the same configuration, for 1000 generations each, but now with a FIS
+controlling the replace chance according to the stagnation index
+explained above
+%in Subsection \ref{dynamic-adaptation-of-the-replace-chance}
+. The error is recorded for each of the 1000 generations, and after one of the experiments is finished, an average of the error for the 1000 generations is calculated. This process is repeated for each of the 60 experiments. Table \ref{dynamic-vs-non-dynamic-table} shows the averages of these experiments.
 
 \begin{table*}
   \caption{Average Errors - Dynamic vs. Fixed Mutation}
@@ -695,61 +739,61 @@ Experiments were performed for each of the 30 stocks provided in the dataset. As
   
   
   
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/stagnation-input/stagnation-input}
-% \caption{{\label{dynamic-adaptation-input}Input for the Dynamic Adaptation of the Replace Chance%
-% }}
-% \end{center}
-% \end{figure}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/stagnation-input/stagnation-input}
+\caption{{\label{dynamic-adaptation-input}Input for the Dynamic Adaptation of the Replace Chance%
+}}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/stagnation-output/stagnation-output}
+\caption{{\label{dynamic-adaptation-output}Output for the Dynamic Adaptation of the Replace Chance%
+}}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/fis-vs-no-fis/fis-vs-no-fis}
+\caption{{\label{with-vs-without-dynamic}Dynamic Adaptation of Replace Chance vs Constant Replace Chance%
+}}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/dynamic-parameter-statistical-test/dynamic-parameter-statistical-test}
+\caption{{\label{dynamic-hypothesis-test}Hypothesis Test for the Dynamic Adaptation of the Replace Chance%
+}}
+\end{center}
+\end{figure}
 
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/stagnation-output/stagnation-output}
-% \caption{{\label{dynamic-adaptation-output}Output for the Dynamic Adaptation of the Replace Chance%
-% }}
-% \end{center}
-% \end{figure}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/percent-return-per-trial/percent-return-per-trial}
+\caption{{\label{8-trials}Rate of Return of the 8 Trials%
+}}
+\end{center}
+\end{figure}
 
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/fis-vs-no-fis/fis-vs-no-fis}
-% \caption{{\label{with-vs-without-dynamic}Dynamic Adaptation of Replace Chance vs Constant Replace Chance%
-% }}
-% \end{center}
-% \end{figure}
-
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/dynamic-parameter-statistical-test/dynamic-parameter-statistical-test}
-% \caption{{\label{dynamic-hypothesis-test}Hypothesis Test for the Dynamic Adaptation of the Replace Chance%
-% }}
-% \end{center}
-% \end{figure}
-
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/percent-return-per-trial/percent-return-per-trial}
-% \caption{{\label{8-trials}Rate of Return of the 8 Trials%
-% }}
-% \end{center}
-% \end{figure}
-
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/avg-rate-of-return/avg-rate-of-return}
-% \caption{{\label{constant-configuration-generations}Experiments of the Proposed Method with a Constant Configuration and Increasing Generations%
-% }}
-% \end{center}
-% \end{figure}
-
-% \begin{figure}[h!]
-% \begin{center}
-% \includegraphics[width=1.00\columnwidth]{figures/rates-of-return-heatmap/rates-of-return-heatmap}
-% \caption{{\label{rates-of-return-heatmap}What stock to choose%
-% }}
-% \end{center}
-% \end{figure}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/avg-rate-of-return/avg-rate-of-return}
+\caption{{\label{constant-configuration-generations}Experiments of the Proposed Method with a Constant Configuration and Increasing Generations%
+}}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1.00\columnwidth]{figures/rates-of-return-heatmap/rates-of-return-heatmap}
+\caption{{\label{rates-of-return-heatmap}What stock to choose%
+}}
+\end{center}
+\end{figure}
 
 % \begin{figure}[h!]
 % \begin{center}
