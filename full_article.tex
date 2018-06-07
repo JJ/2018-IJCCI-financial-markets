@@ -550,48 +550,66 @@ A flowchart depicting the modified GP algorithm is shown in Figure \ref{flowchar
 
 This Section begins explaining the experiment and results obtained from implementing the dynamic adaptation of the replace chance through the use of a FIS. Then, the proposed method is compared against the method proposed by Brown, Pelosi, and Dirska \cite{brown2013dynamic}, using their proposed dataset. The experiment by Brown et al., was expanded to 30 trials, instead of 8, in order to obtain more statistical evidence. Furthermore, a series of experiments (where a winning stock has to be chosen, as in the work by Brown, et al.) with an increasing number of generations were performed and, again, 30 trials were run instead of 8, with 30 different number of generations. Another set of experiments similar to the experiments mentioned before were performed, where different configurations of the proposed method are used. Each of the different configurations was run for 30 trials, and the average ROI was collected.
 
-After the previous set of experiments were performed, the authors decided to perform experiments where the forecast of individual stocks take place, instead of choosing a stock to buy for each of the weeks in the dataset. This set of experiments is more a regression type of experiments than a recommendation type. First, five stocks were chosen where the proposed method was applied with different configurations. Then, each of the stocks in the dataset was evaluated with the proposed method using a configuration that was found to have a good performance by trial and error. The effectiveness of the experiments is determined by how much average ROI is collected.
+After the previous set of experiments were performed, the authors
+decided to perform experiments where the forecast of individual stocks
+take place, instead of choosing a stock to buy for each of the weeks
+in the dataset. This set of experiments is more a regression type of
+experiments than a recommendation type. First, five stocks were chosen
+where the proposed method was applied with different
+configurations. Then, each of the stocks in the dataset was evaluated
+with the proposed method using a configuration that was found to have
+a good performance by trial and error. The effectiveness of the
+experiments is determined by how much average ROI is collected. 
 
-As a final experiment, the proposed method performs a pure regression task, where it tries to predict the directional strength of the next week's record in the dataset.
+As a final experiment, the proposed method performs a pure regression
+task, where it tries to predict the directional strength of the next
+week's record in the dataset. 
 
-\subsection{Dynamic Adaptation of the Replace Chance}
+% \subsection{Dynamic Adaptation of the Replace Chance}
 
-To compare the efficacy of the proposed method with, and without
-dynamic adaptation of the replace chance, two experiments were
-performed and then compared using a hypothesis test. 30 experiments
-were run with certain configuration, for 1000 generations each, with a
-constant value of replace chance. Then, 30 experiments were run with
-the same configuration, for 1000 generations each, but now with a FIS
-controlling the replace chance according to the stagnation index
-explained above
-%in Subsection \ref{dynamic-adaptation-of-the-replace-chance}
-. The error is recorded for each of the 1000 generations, and after one of the experiments is finished, an average of the error for the 1000 generations is calculated. This process is repeated for each of the 60 experiments. Table \ref{dynamic-vs-non-dynamic-table} shows the averages of these experiments.
+% To compare the efficacy of the proposed method with, and without
+% dynamic adaptation of the replacement rate, two experiments were
+% performed and then compared using a hypothesis test. 30 experiments
+% were run with certain configuration, for 1000 generations each, with a
+% constant value of replace chance. Then, 30 experiments were run with
+% the same configuration, for 1000 generations each, but now with a FIS
+% controlling the replace chance according to the stagnation index
+% explained above
+% % in Subsection \ref{dynamic-adaptation-of-the-replace-chance}
+% % I don't think this table really helps with anything.
+% . The error is recorded for each of the 1000 generations, and after one of the experiments is finished, an average of the error for the 1000 generations is calculated. This process is repeated for each of the 60 experiments. Table \ref{dynamic-vs-non-dynamic-table} shows the averages of these experiments.
 
-\begin{table*}
-  \caption{Average Errors - Dynamic vs. Fixed Mutation}
-  \centering
-    \label{dynamic-vs-non-dynamic-table}
-    \begin{tabular}{ c c | c c}
-        \multicolumn{2}{c}{Without Dynamic Adaptation} & \multicolumn{2}{c}{With Dynamic Adaptation} \\ 
-         1311.36858  & 1046.104578 & 1216.510814 & 1143.389484 \\ 
-         1229.470821 & 1355.991986 & 1241.307708 & 1102.711613 \\ 
-         1295.573386 & 1091.08208  & 1120.805705 & 1249.783318 \\ 
-         1030.289883 & 1327.723752 & 1172.208267 & 1111.148651 \\ 
-         1336.959564 & 1091.20479  & 972.4929395 & 1215.476516 \\ 
-         1384.057403 & 1265.682395 & 1170.073256 & 1169.588612 \\ 
-         1303.139391 & 1246.964085 & 1278.311636 & 1040.093053 \\ 
-         1391.94702  & 1158.730397 & 1154.370559 & 762.2223289 \\ 
-         1125.607147 & 1373.704464 & 1063.93828  & 1207.359942 \\ 
-         1336.603628 & 1130.282865 & 1227.164144 & 1168.572853 \\
-         1308.989252 & 1135.924961 & 1067.38689  & 1162.467748 \\
-         1253.008383 & 1384.15463  & 1273.537452 & 1248.3565   \\
-         1265.489682 & 1487.437018 & 960.6685944 & 1140.389075 \\
-         1247.161813 & 1215.320663 & 1173.268224 & 1309.74542  \\
-         1025.353754 & 1173.167377 & 1169.425716 & 978.8573602 \\
-    \end{tabular} 
-\end{table*}
+% \begin{table*}
+%   \caption{Average Errors - Dynamic vs. Fixed Mutation}
+%   \centering
+%     \label{dynamic-vs-non-dynamic-table}
+%     \begin{tabular}{ c c | c c}
+%         \multicolumn{2}{c}{Without Dynamic Adaptation} & \multicolumn{2}{c}{With Dynamic Adaptation} \\ 
+%          1311.36858  & 1046.104578 & 1216.510814 & 1143.389484 \\ 
+%          1229.470821 & 1355.991986 & 1241.307708 & 1102.711613 \\ 
+%          1295.573386 & 1091.08208  & 1120.805705 & 1249.783318 \\ 
+%          1030.289883 & 1327.723752 & 1172.208267 & 1111.148651 \\ 
+%          1336.959564 & 1091.20479  & 972.4929395 & 1215.476516 \\ 
+%          1384.057403 & 1265.682395 & 1170.073256 & 1169.588612 \\ 
+%          1303.139391 & 1246.964085 & 1278.311636 & 1040.093053 \\ 
+%          1391.94702  & 1158.730397 & 1154.370559 & 762.2223289 \\ 
+%          1125.607147 & 1373.704464 & 1063.93828  & 1207.359942 \\ 
+%          1336.603628 & 1130.282865 & 1227.164144 & 1168.572853 \\
+%          1308.989252 & 1135.924961 & 1067.38689  & 1162.467748 \\
+%          1253.008383 & 1384.15463  & 1273.537452 & 1248.3565   \\
+%          1265.489682 & 1487.437018 & 960.6685944 & 1140.389075 \\
+%          1247.161813 & 1215.320663 & 1173.268224 & 1309.74542  \\
+%          1025.353754 & 1173.167377 & 1169.425716 & 978.8573602 \\
+%     \end{tabular} 
+% \end{table*}
 
-The design of the FIS is rather simple. The input of the FIS is the stagnation index, and the output is the new replace chance for the GP system in that particular iteration or generation. The input MF are depicted in Figure \ref{dynamic-adaptation-input} and the output MF are depicted in Figure \ref{dynamic-adaptation-output}. The design of these MF were obtained according to the subjective opinion of the authors, and by trial and error. The rule set is presented below:
+The design of the FIS is rather simple. The input of the FIS is the
+stagnation index, and the output is the new replacement rate for the GP
+system in that particular iteration or generation. The input MF are
+depicted in Figure \ref{dynamic-adaptation-input} and the output MF
+are depicted in Figure \ref{dynamic-adaptation-output}. The design of
+these MF were obtained according to the subjective opinion of the
+authors, and by trial and error. The rule set is presented below: 
 
 \begin{enumerate}
 \item if SI is Low then RC is Low
@@ -599,20 +617,50 @@ The design of the FIS is rather simple. The input of the FIS is the stagnation i
 \item if SI is High then RC is High
 \end{enumerate}
 
-In Figure \ref{with-vs-without-dynamic}, one can see how the dynamic adaptation of the replace chance helps avoid stagnation of the proposed method. Nevertheless, a hypothesis test was performed to formally prove this hypothesis. The hypothesis test was performed in the statistics software Stata, and the results are shown in Figure \ref{dynamic-hypothesis-test}. One can see that the hypothesis test obtained a t-score of -3.3529, where the critical t value for a 95\% confidence interval is -2.0018. As a conclusion, the null hypothesis is rejected (which is that the average of the error of the 30 averages of the experiments with dynamic adaptation of the replace chance is greater than or equal than the averages without the dynamic adaptation), and this means that the proposed method with dynamic adaptation of the replace chance outperforms the proposed method with a constant value of replace chance.
+In Figure \ref{with-vs-without-dynamic}, one can see how the dynamic
+adaptation of the replacement rate helps avoid stagnation of the
+proposed method. Nevertheless, a hypothesis test was performed to
+formally prove this hypothesis. The hypothesis test was performed in
+the statistics software Stata, and the results are shown in Figure
+\ref{dynamic-hypothesis-test}. One can see that the hypothesis test
+obtained a t-score of -3.3529, where the critical t value for a 95\%
+confidence interval is -2.0018. As a conclusion, the null hypothesis
+is rejected (which is that the average of the error of the 30 averages
+of the experiments with dynamic adaptation of the replace chance is
+greater than or equal than the averages without the dynamic
+adaptation), and this means that the proposed method with dynamic
+adaptation of the replace chance outperforms the proposed method with
+a constant value of replacement rate. 
 
 \subsection{Stock Selection}
 
-In all of the following experiments, the dataset provided in \cite{brown2013dynamic} is used, and the first quarter (12 records) of each stock is used for training, and the second quarter (13 records) is used for testing.
+In the following experiments, the dataset provided in
+\cite{brown2013dynamic} is used, and the first quarter (12 records) of
+each stock is used for training with the second quarter (13 records)
+used for testing. 
 
 \subsubsection{Comparison Against Brown et al.}
 
-Brown, et al. \cite{brown2013dynamic} used their method to run a set of 8 trials, where the purpose of the experiment is to choose what the algorithm considers will be the better performing stock to buy for the next week. In the end, a single trial sums the rate of return from buying all the stocks that were chosen by the algorithm. In their work, they present a table showing what stocks were chosen and what was the total rate of return of their best trial (which in their case was the 4th trial). Then, they illustrate the results of all the trials in a similar chart to Figure \ref{8-trials}, and they provide an average of the 8 trials.
+Brown, et al. \cite{brown2013dynamic} used their method to run a set
+of 8 trials, where the purpose of the experiment is to choose what the
+algorithm considers will be the better performing stock to buy for the
+next week. In the end, a single trial sums the rate of return from
+buying all the stocks that were chosen by the algorithm. In their
+work, they present a table showing what stocks were chosen and what
+was the total rate of return of their best trial (which in their case
+was the 4th trial). Then, they illustrate the results of all the
+trials in a similar chart to Figure \ref{8-trials}, and they provide
+an average of the 8 trials. 
 
-The authors of this work don't consider this experiment to be enough to prove the efficacy of the proposed method. Nevertheless, we provide an experiment similar to theirs in order to compare results. Table \ref{best-trial-table} shows what stocks our proposed method chose, along with the total rate of return. In this case, it outperformed the results obtained by Brown, et al.
+The authors of this work don't consider this experiment to be enough
+to prove the efficacy of the proposed method. Nevertheless, we provide
+an experiment similar to theirs in order to compare results. Table
+\ref{best-trial-table} shows what stocks our proposed method chose,
+along with the total rate of return. In this case, it outperformed the
+results obtained by Brown, et al. 
     
 \begin{table}
-    \caption{{Stocks Selection for Trial 4}} 
+    \caption{{Stocks selection for trial 4}} 
     \label{best-trial-table}
     \centering
     \begin{tabular}{ c c r }
@@ -623,7 +671,7 @@ Week & Stock & Return  \\
 4 & CSCO & 3.48494 \\  
 5 & CSCO & 0.285551 \\ 
 6 & HD & 0.216626 \\
-7 & HD & 0.981194 &
+7 & HD & 0.981194 \\
 8 & MMM & 1.27858 \\    
 9 & IBM & -2.01259 \\   
 10 & INTC & -1.92661 \\ 
@@ -634,7 +682,14 @@ Total &  & 16.489065 \\
     \end{tabular}
 \end{table}
 
-As mentioned before, Figure \ref{8-trials} shows a graphical representation of the results obtained from the 8 trials, where the quarterly return and the average weekly return are shown. In this case, the average rate of return of the 8 trials was 8.1140\%, which again outperforms the average obtained by Brown, et al., which was 7.075\%.
+As mentioned before, Figure \ref{8-trials} shows a graphical
+representation of the results obtained from the 8 trials, where the
+quarterly return and the average weekly return are shown. In this
+case, the average rate of return of the 8 trials was 8.1140\%, which
+again outperforms the average obtained by Brown, et al., which was
+7.075\%. % Why only 8 trials? How did you compute that average? By
+         % averaging rate of returns? Or actual money obtained? What
+         % happened with trial #3? - JJ
 
 \subsubsection{Extended Experiments - Constant Configuration, Increasing Generations}
 
@@ -645,7 +700,9 @@ The first extended experiment consists on providing the proposed method certain 
 This experiment is similar to that presented by Brown, et al., with the difference that 30 trials are run instead of 8, and different configurations of the proposed method are used. The results are shown in Table \ref{table-rates-of-return}.
 
 \begin{table}
-  \caption{{Choosing what Stock to Buy - Variable Configurations}}
+  \caption{{Choosing what Stock to Buy - Variable Configurations}
+    % Don't Use Capitals here - JJ
+  }
   \centering
 \label{table-rates-of-return}
     \begin{tabular}{ c c c c c c }
@@ -913,28 +970,30 @@ Experiments were performed for each of the 30 stocks provided in the dataset. As
 \section{Conclusion and Future Work}
 \label{conclusions}
 
-The authors of this work performed exhaustive experiments in order to
-support the validity and efficacy of the proposed
-method. Nevertheless, the method should keep being validated and
-improved. Regarding the validation of the method, more experiments can
-be performed with other datasets and more comparisons with other works
-can be done. Regarding the improvement of the method, there are many
-areas of the algorithm that are known that can be improved, like
-applying dynamic adaptation of parameters to other parameters of the
-algorithm, such as the crossover, migration, and mutation
-chance. Also, the operators of the GP algorithm can be modified to
-different sets in order to obtain better performing MF, and the ranges
-of the literals can be adjusted (or even dynamically adapted) to
-improve the overall performance of the algorithm.
+% The authors of this work performed exhaustive experiments in order to
+% support the validity and efficacy of the proposed
+% method. Nevertheless, the method should keep being validated and
+% improved.
+
+% Regarding the validation of the method, more experiments can
+% be performed with other datasets and more comparisons with other works
+% can be done. Regarding the improvement of the method, there are many
+% areas of the algorithm that are known that can be improved, like
+% applying dynamic adaptation of parameters to other parameters of the
+% algorithm, such as the crossover, migration, and mutation
+% chance. Also, the operators of the GP algorithm can be modified to
+% different sets in order to obtain better performing MF, and the ranges
+% of the literals can be adjusted (or even dynamically adapted) to
+% improve the overall performance of the algorithm.
 
 The created
 algorithm goes deeper than just giving recommendations; in the end, a
 novel method for performing regression has been created, and the authors
 believe that it can be extended to perform classification tasks.
 
-In conclusion, one can see that the results are very satisfactory, and
-that the system can effectively be used as a DSS, and as a technique
-to create regression models of financial time series. % A bit of more
+% In conclusion, one can see that the results are very satisfactory, and
+% that the system can effectively be used as a DSS, and as a technique
+% to create regression models of financial time series. % A bit of more
                                 % discussion would be needed
 
 \section{Acknowledgements}
