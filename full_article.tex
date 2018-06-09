@@ -38,23 +38,48 @@
 
 \abstract{% First, motivation: Why do you need this paper
   % Second, problem: what are you dealing with.
-  This work proposes a decision support system that helps users
+  % Start: Motivation - AHA :)
+  Making decisions when trading in a financial market is a complex
+  task, involving the analysis of different factors. A solution to
+  this complex process is provided in this paper: %
+  % 
+  a decision support system, which helps users
   choose a stock to buy. In order to arrive to a decision, an 
   architecture of zero-sum multi-agents based on fuzzy
   inference systems and genetic programming was designed. This
-  architecture allows an individual %individual == agent?
+  architecture allows a person %individual == agent?    % No, a human
+                               %being. The idea here is that you can
+                               %check how the membership functions
+                               %were evolved and use them to create a
+                               %new theory about the market. For
+                               %example, if the majority of the agents
+                               %were buying when X happened, let's
+                               %check how the membership functions'
+                               %configuration affected this
+                               %decision. - AHA
   to examine the membership
   functions of the fuzzy inference systems to better understand the
   behavior of a financial market. Each of the agents uses a fuzzy inference system to decide in what
   direction they will trade and how much trading force they will
-  use. The multi-agent system % the whole system? - JJ
+  use. The multi-agent system % the whole system? - JJ   % Yes, all
+                              % the agents start evolving to curve fit
+                              % the market prices. For example, if the
+                              % price at point t0 is 10, and agent1 is
+                              % buying 15 units, then agent2 needs to
+                              % sell 5 units to arrive at the price of
+                              % 10. - AHA
   performs a regression task on the time
   series data of a stock, to determine the direction and strength of
   the next movement in the time series; this process is repeated for
   every financial market being considered, and the stock with the highest
   predicted strength is recommended to the user to be traded. The
   method was tested  and found profitble against a stock selection benchmark based on the
-  Dow Jones Index.} % Is that the only metric? Being profitable? - JJ
+  Dow Jones Index.} % Is that the only metric?  Being profitable? - JJ
+                    % % Unfortunately, yes. As far as I remember, I
+                    % avoided focusing on error minimization, for
+                    % example (regarding the curve fitting), because
+                    % it wasn't giving great results compared to other
+                    % curve fitting solutions. - AHA
 
 \onecolumn \maketitle \normalsize \vfill
 
@@ -345,9 +370,10 @@ and it outperforms the simple buy-and-hold strategy.
 % \label{dataset}
 
 First we had to settle in a dataset on which we could perform this
-work. Initially, we selected the dataset proposed used by Brown, Pelosi, and
+work. Initially, we selected the dataset proposed  by Brown, Pelosi, and
 Dirska \cite{brown2013dynamic}, which can be found at the UCI Machine
 Learning Repository under the name of "Dow Jones Index Data Set." % Justify this choice. - JJ
+% This dataset was chosen because it is relatively recent
 In
 this work we only used the open, high, low, and close prices, and we
 obtained the average directional index (ADX), stochastic oscillator
@@ -357,8 +383,14 @@ using an online tool called FreeStockCharts, which can be found at
 provided in the dataset by Brown et al. using FreeStockCharts, and
 downloaded the full historical data from the platform. A filtering was
 performed where only the relevant records were extracted (the same
-records that are present in the benchmarking dataset). % Maybe make
-                                % the data available? - JJ
+records that are present in the benchmarking dataset). The reader can
+download the preprocessed data (data.csv) at the following GitHub's
+repository: https://github.com/JJ/2018-IJCCI-financial-markets. % Maybe make
+                                % the data available? - JJ   % Found
+                                % it! I'll add it to the
+                                % repository. I'm not that sure about
+                                % how I wrote this sentence. Rewrite
+                                % it if you have a better way - AHA
 
 This dataset was enriched with another attribute, which we call
 ``directional strength'' ($DS$), which indicates how strong a movement was at
@@ -409,7 +441,11 @@ good fitness indicator by trial and error, but other fitness functions
 can be used. A flowchart depicting the algorithm that creates a
 population of these communities is presented in Figure
 \ref{flowchart-without-dynamic}. % Maybe explain this GA a bit better?
-                                % Is it published somewhere? - JJ
+
+
+                                % Is it published somewhere? - JJ %
+                                % It's not published. I made it from
+                                % scratch - AHA
 
 % \subsection{Fuzzy Inference Systems}
 
@@ -419,8 +455,15 @@ the ADX, SO, and RSI. The output is a real number between -100 and 100
 that represents the directional strength. To arrive to this output
 number, one can choose a number of MF that act as inputs and a number
 of MF that act as outputs. By trial and error, the authors found that
-a number of 5 outputs gave good results in most cases. % 5 membership
-                                % functions? - JJ
+a number of 5 outputs or MF gave good results in most cases. % 5 membership
+                                % functions? - JJ   % Yeah, membership
+                                % functions. The idea is that, as the
+                                % membership functions are being
+                                % evolved, they don't really mean
+                                % something like "high" or "low." We
+                                % just want to map an antecedent to a
+                                % consequent, and then perform the
+                                % aggregation and defuzzification. - AHA
 The FIS
 defuzzifies the aggregation of the MF at their activation level
 determined by its inputs, and this will represent a directional
@@ -752,7 +795,16 @@ case, the average rate of return of the 8 trials was 8.1140\%, which
 again outperforms the average obtained by Brown, et al., which was
 7.075\%. % Why only 8 trials? How did you compute that average? By
          % averaging rate of returns? Or actual money obtained? What
-         % happened with trial #3? - JJ
+         % happened with trial #3? - JJ  
+
+         % Brown used 8 trials, so I
+         % used the same amount. This is explained in the second and third
+         % paragraphs of this Section. 
+
+         % It is just a simple average, and yeah, I averaged the rate
+         % of returns. I don't know how to better explain it. In my
+         % opinion it is enough by saying "the average rate of
+         % return"
 
 \subsubsection{Extended Experiments - Constant Configuration, Increasing Generations}
 
@@ -875,7 +927,7 @@ and the next 13 weeks were used for testing. The proposed method tries
 to predict if the trader has to sell or buy each of the stocks, and
 for each successful or unsuccessful prediction, a positive or negative
 rate of return is accumulated, respectively. This process is repeated
-30 times for each stock, and the results presented in Table
+30 times for each stock, and the results are presented in Table
 \ref{avg-rates-of-return-table}. %Nothing about this result - JJ
 
 \begin{table}
