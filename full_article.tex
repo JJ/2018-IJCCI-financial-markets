@@ -28,7 +28,7 @@
 \title{A Novel Method Based on Fuzzy Inference, Multi-agent Systems and Genetic Programming for the Forecast of Financial Markets}
 
 \author{\authorname{Amaury Hernandez-Aguila\sup{1}, Mario Garc\'ia Valdez\sup{1}, JJ Merelo\sup{2}}
-  \affiliation{\sup{1}Instituto Tecnológico de Tijuana}
+  \affiliation{\sup{1}Instituto Tecnolï¿½gico de Tijuana}
   \affiliation{\sup{2}CITIC/Universidad de Granada}
   \email{amherag@gmail.com,mariosky@gmail.com, jjmerelo@gmail.com}
 }
@@ -245,7 +245,7 @@ The authors of this work gained useful knowledge about MAS from two
 theses. The first one is the work from Grothmann
 \cite{Grothmann2002}. This work served as inspiration for the
 architecture of the proposed method. The second thesis is by
-Boer-Sorbán \cite{Boer-Sorban2008}, which gave an overview of
+Boer-Sorbï¿½n \cite{Boer-Sorban2008}, which gave an overview of
 approaches to describe and understand financial market's dynamics, and
 motivated the authors of this work to use the approach of agent-based
 computation to perform financial forecast. 
@@ -763,7 +763,7 @@ to prove the efficacy of the proposed method. Nevertheless, we provide
 an experiment similar to theirs in order to compare results. Table
 \ref{best-trial-table} shows what stocks our proposed method chose,
 along with the total rate of return. In this case, it outperformed the
-results obtained by Brown, et al. 
+results obtained by Brown, et al. which was 9.51\%. 
     
 \begin{table}
     \caption{{Stocks selection for trial 4}} 
@@ -831,7 +831,7 @@ configurations of the proposed method are used. The results are shown
 in Table \ref{table-rates-of-return}. 
 
 \begin{table}
-  \caption{{Choosing what Stock to Buy - Variable Configurations}
+  \caption{{Choosing what stock to buy - variable configurations}
     % Don't Use Capitals here - JJ
   }
   \centering
@@ -919,54 +919,56 @@ A heatmap is provided in Figure \ref{rates-of-return-heatmap} for the reader in 
 %     \end{tabular} 
 % \end{table}
 
-\subsubsection{Extended Experiments - Constant Configuration, Prediction of Every Stock}
+%\subsubsection{Extended Experiments - Constant Configuration, Prediction of Every Stock}
 
-Experiments were performed for each of the 30 stocks provided in the
-dataset. As in previous experiments, 12 weeks were used as training
-and the next 13 weeks were used for testing. The proposed method tries
-to predict if the trader has to sell or buy each of the stocks, and
-for each successful or unsuccessful prediction, a positive or negative
-rate of return is accumulated, respectively. This process is repeated
-30 times for each stock, and the results are presented in Table
-\ref{avg-rates-of-return-table}. %Nothing about this result - JJ
+%Experiments were performed for each of the 30 stocks provided in the
+%dataset. As in previous experiments, 12 weeks were used as training
+%and the next 13 weeks were used for testing. The proposed method tries
+%to predict if the trader has to sell or buy each of the stocks, and
+%for each successful or unsuccessful prediction, a positive or negative
+%rate of return is accumulated, respectively. This process is repeated
+%30 times for each stock, and the results are presented in Table
+%\ref{avg-rates-of-return-table}. %Nothing about this result - JJ
 
-\begin{table}
-    \caption{{Average Rate of Return for Each of the 30 Stocks}} 
-    \label{avg-rates-of-return-table}
-    \begin{tabular}{ c c }
-        Stock & Average Rate of Return \\ 
-        AA & -0.9178899\% \\ %0
-        AXP & -0.09852924\% \\ %1
-        BA & 1.2301333\% \\ %2 
-        BAC & 9.677296\% \\ %3 
-        CAT & -0.029123219\% \\ %4
-        CSCO & 1.2233882\% \\ %5
-        CVX & -1.7162496\% \\ %6
-        DD & 1.6538299\% \\ %7
-        DIS & -0.2845998\% \\ %8
-        GE & -1.27476446\% \\ %9
-        HD & 2.8385108\% \\ %10
-        HPQ & -1.2462806\% \\ %11
-        IBM & 6.065919\% \\ %12
-        INTC & 1.293835\% \\ %13
-        JNJ & -2.6360352\% \\ %14
-        JPM & -0.8155595\% \\ %15
-        KO & 2.2938771\% \\ %16
-        KRFT & -0.3530073\% \\ %16
-        MCD & -2.8480105\% \\ %17
-        MMM & -0.3500379\% \\ %18
-        MRK & -6.3991796\% \\ %19
-        MSFT & -4.97989\% \\ %20
-        PFE & 0.93456393\% \\ %21
-        PG & -2.9159548\% \\ %22
-        T & 0.061197344\% \\ %23
-        TRV & -1.4025264\% \\ %24
-        UTX & 1.2724808\% \\ %25
-        VZ & -2.7433705\% \\ %26
-        WMT & -2.3362381\% \\ %27
-        XOM & 1.8770896\% \\ %28
-    \end{tabular}
-\end{table}
+% This was work in progress with out good results yet 
+
+% \begin{table}
+%     \caption{{Average Rate of Return for Each of the 30 Stocks}} 
+%     \label{avg-rates-of-return-table}
+%     \begin{tabular}{ c c }
+%         Stock & Average Rate of Return \\ 
+%         AA & -0.9178899\% \\ %0
+%         AXP & -0.09852924\% \\ %1
+%         BA & 1.2301333\% \\ %2 
+%         BAC & 9.677296\% \\ %3 
+%         CAT & -0.029123219\% \\ %4
+%         CSCO & 1.2233882\% \\ %5
+%         CVX & -1.7162496\% \\ %6
+%         DD & 1.6538299\% \\ %7
+%         DIS & -0.2845998\% \\ %8
+%         GE & -1.27476446\% \\ %9
+%         HD & 2.8385108\% \\ %10
+%         HPQ & -1.2462806\% \\ %11
+%         IBM & 6.065919\% \\ %12
+%         INTC & 1.293835\% \\ %13
+%         JNJ & -2.6360352\% \\ %14
+%         JPM & -0.8155595\% \\ %15
+%         KO & 2.2938771\% \\ %16
+%         KRFT & -0.3530073\% \\ %16
+%         MCD & -2.8480105\% \\ %17
+%         MMM & -0.3500379\% \\ %18
+%         MRK & -6.3991796\% \\ %19
+%         MSFT & -4.97989\% \\ %20
+%         PFE & 0.93456393\% \\ %21
+%         PG & -2.9159548\% \\ %22
+%         T & 0.061197344\% \\ %23
+%         TRV & -1.4025264\% \\ %24
+%         UTX & 1.2724808\% \\ %25
+%         VZ & -2.7433705\% \\ %26
+%         WMT & -2.3362381\% \\ %27
+%         XOM & 1.8770896\% \\ %28
+%     \end{tabular}
+% \end{table}
   
 % \subsubsection{Extended Experiments - Directional Strength Prediction}
   
