@@ -57,6 +57,7 @@
                                %check how the membership functions'
                                %configuration affected this
                                %decision. - AHA
+  %OK
   to examine the membership
   functions of the fuzzy inference systems to better understand the
   behavior of a financial market. Each of the agents uses a fuzzy inference system to decide in what
@@ -73,13 +74,14 @@
   the next movement in the time series; this process is repeated for
   every financial market being considered, and the stock with the highest
   predicted strength is recommended to the user to be traded. The
-  method was tested  and found profitble against a stock selection benchmark based on the
+  method was tested  and found profitable against a stock selection benchmark based on the
   Dow Jones Index.} % Is that the only metric?  Being profitable? - JJ
                     % % Unfortunately, yes. As far as I remember, I
                     % avoided focusing on error minimization, for
                     % example (regarding the curve fitting), because
                     % it wasn't giving great results compared to other
                     % curve fitting solutions. - AHA
+% ok - Jj
 
 \onecolumn \maketitle \normalsize \vfill
 
@@ -310,8 +312,7 @@ pressure or economic factors such as the standard of living.
 % \subsection{Fuzzy Prediction}
 % \label{fuzzy-prediction}
 
-As has been previously mentioned, in this work each agent uses a FIS
-as its agent's function. The agent function has the objective to
+As has been previously mentioned, in this work each agent uses a FIS. The agent function has the objective to
 determine how much "trading force" an agent has to provide, so the sum
 of all the agent forces give a zero-sum system. FIS have successfully
 been used to predict financial markets in the past. This Subsection
@@ -319,7 +320,7 @@ provides a series of works which use fuzzy logic and other related
 techniques to the proposed method, as a mean to forecast financial
 markets. 
 
-Ijegwa et al. \cite{Ijegwa2014}, crated a FIS that uses four TI as
+Ijegwa et al. \cite{Ijegwa2014}, created a FIS that uses four TI as
 input and the output is a recommendation to buy, sell or hold in a
 financial market. This way, their system aids the trader in the
 decision making process. They decided to use the moving average
@@ -384,14 +385,8 @@ provided in the dataset by Brown et al. using FreeStockCharts, and
 downloaded the full historical data from the platform. A filtering was
 performed where only the relevant records were extracted (the same
 records that are present in the benchmarking dataset). The reader can
-download the preprocessed data (data.csv) at the following GitHub's
-repository: \url{https://github.com/JJ/2018-IJCCI-financial-markets}. % Maybe make
-                                % the data available? - JJ   % Found
-                                % it! I'll add it to the
-                                % repository. I'm not that sure about
-                                % how I wrote this sentence. Rewrite
-                                % it if you have a better way - AHA
-% thanks! - JJ
+download the preprocessed data in CSV format at the following GitHub's
+repository: \url{https://github.com/JJ/2018-IJCCI-financial-markets}. 
 
 This dataset was enriched with another attribute, which we call
 ``directional strength'' ($DS$), which indicates how strong a movement was at
@@ -414,7 +409,7 @@ series, \textit{O} represents the open price, \textit{H} the high,
 % Summary of the structure of the dataset: number of elements, number
 % of days, number of stocks... - JJ
 
-This dataset must be used to create a system that helps take decisions
+This dataset is going to be used to create a system that helps take decisions
 regarding stock trading, by telling the user the
 direction the market is going to take (downtrend or uptrend) and
 its strength, through the use of the directional strength
@@ -456,7 +451,7 @@ the ADX, SO, and RSI. The output is a real number between -100 and 100
 that represents the directional strength. To arrive to this output
 number, one can choose a number of MF that act as inputs and a number
 of MF that act as outputs. By trial and error, the authors found that
-a number of 5 outputs or MF gave good results in most cases. % 5 membership
+a number of five membership functions gave good results in most cases. % 5 membership
                                 % functions? - JJ   % Yeah, membership
                                 % functions. The idea is that, as the
                                 % membership functions are being
@@ -521,7 +516,7 @@ selected from the population. % I'm a bit lost. A clearer, top-down
                               % does GP do here? What is the fitness? 
 
 The migration operation is a rather simple one. According to a
-migration chance, an agent from a community A will get interchanged
+migration rate, an agent from a community A will get interchanged
 with another agent from a community B. In order to determine if this
 interchange is to be performed, the algorithm checks if the sum of the
 forces of community A is of different sign than the sum of forces of
@@ -571,14 +566,14 @@ SO).
 % \subsection{Dynamic Adaptation of the Replace Chance}
 % \label{dynamic-adaptation-of-the-replace-chance}
 
-The replace chance parameter, instead of being constant, is
+The replacement rate, instead of being constant, is
 dynamically adapted using a FIS while the GP process is running. This
-idea was borrowed from the series of works by Castillo, et al. An
+idea was adapted from the series of works by Castillo, et al. An
 example of this dynamic adaptation of parameters can be found in
 \cite{castillo2015new}, where the authors apply a FIS that controls
 the value of certain parameters in an ant colony optimization
-algorithm (ACO), proposing different architectures. Then, these
-architectures are compared in performance. In the end, the authors
+algorithm (ACO), proposing different architectures, which are then
+compared in performance. In the end, the authors
 prove that the dynamic adaptation of parameters through the use of FIS
 can improve the performance of ACO. Additionally, one can find a
 survey of the application of this type of technique in the work by
@@ -634,7 +629,8 @@ A flowchart depicting the modified GP algorithm is shown in Figure \ref{flowchar
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.70\columnwidth]{figures/flowchart-with/flowchart-with}
-\caption{{\label{flowchart-with-dynamic}Flowchart of the Proposed Method with Dynamic Adaptation of Replace Chance%
+\caption{{\label{flowchart-with-dynamic}Flowchart of the proposed
+    method with dynamic adaptation of the replacement rate%
 }}
 \end{center}
 \end{figure}
@@ -806,6 +802,9 @@ again outperforms the average obtained by Brown, et al., which was
          % of returns. I don't know how to better explain it. In my
          % opinion it is enough by saying "the average rate of
          % return"
+% But it will depend on the amount of money you obtain. It's not the
+% same if you get 10% rate on 1000$ and then 0.1% on 10$. The average
+% must be over the total money invested and obtained- JJ
 
 \subsubsection{Extended Experiments - Constant Configuration, Increasing Generations}
 
