@@ -1,0 +1,162 @@
+Trial 1
+
+Week 1, Winner: DD, Percentage: -0.18018
+Week 2, Winner: MCD, Percentage: 1.61523
+Week 3, Winner: CVX, Percentage: 3.03001
+Week 4, Winner: XOM, Percentage: 1.95851
+Week 5, Winner: BAC, Percentage: -0.404531
+Week 6, Winner: PFE, Percentage: 1.89966
+Week 7, Winner: BA, Percentage: -1.44928
+Week 8, Winner: BA, Percentage: 0.574788
+Week 9, Winner: PFE, Percentage: -0.761905
+Week 10, Winner: BA, Percentage: -2.76886
+Week 11, Winner: VZ, Percentage: 0.794777
+Week 12, Winner: TRV, Percentage: -1.54594
+Week 13, Winner: VZ, Percentage: 5
+
+Quarterly Return: 7.7622789999999995
+Average Weekly Return: 0.5970983846153846
+
+Trial 2
+
+Week 1, Winner: DIS, Percentage: -2.58922
+Week 2, Winner: MCD, Percentage: 1.61523
+Week 3, Winner: HPQ, Percentage: 2.57758
+Week 4, Winner: AXP, Percentage: 4.00509
+Week 5, Winner: PG, Percentage: 0.0459841
+Week 6, Winner: BA, Percentage: -0.353045
+Week 7, Winner: XOM, Percentage: 1.68287
+Week 8, Winner: JNJ, Percentage: 2.42368
+Week 9, Winner: XOM, Percentage: -2.52161
+Week 10, Winner: UTX, Percentage: -0.277342
+Week 11, Winner: KO, Percentage: 0.798771
+Week 12, Winner: INTC, Percentage: 0.0471921
+Week 13, Winner: T, Percentage: 3.36052
+
+Quarterly Return: 10.815700200000002
+Average Weekly Return: 0.8319769384615386
+
+Trial 3
+
+Week 1, Winner: PFE, Percentage: -0.437956
+Week 2, Winner: KO, Percentage: 1.13011
+Week 3, Winner: BA, Percentage: 3.74037
+Week 4, Winner: VZ, Percentage: 1.9153
+Week 5, Winner: MCD, Percentage: 0.382653
+Week 6, Winner: MCD, Percentage: 1.61087
+Week 7, Winner: MCD, Percentage: 2.34958
+Week 8, Winner: IBM, Percentage: -0.593472
+Week 9, Winner: KO, Percentage: -2.10636
+Week 10, Winner: UTX, Percentage: -0.277342
+Week 11, Winner: VZ, Percentage: 0.794777
+Week 12, Winner: XOM, Percentage: -2.37762
+Week 13, Winner: MMM, Percentage: 6.13746
+
+Quarterly Return: 12.26837
+Average Weekly Return: 0.9437207692307693
+
+Trial 4
+
+Week 1, Winner: T, Percentage: -0.0975927
+Week 2, Winner: CSCO, Percentage: -3.83964
+Week 3, Winner: JNJ, Percentage: 5.98842
+Week 4, Winner: CSCO, Percentage: 3.48494
+Week 5, Winner: PG, Percentage: 0.0459841
+Week 6, Winner: INTC, Percentage: 1.21055
+Week 7, Winner: IBM, Percentage: 0.206113
+Week 8, Winner: T, Percentage: 0.935484
+Week 9, Winner: HD, Percentage: -4.28413
+Week 10, Winner: WMT, Percentage: -2.1166
+Week 11, Winner: MSFT, Percentage: 1.97562
+Week 12, Winner: DIS, Percentage: -0.713342
+Week 13, Winner: WMT, Percentage: 2.27446
+
+Quarterly Return: 5.0702663999999995
+Average Weekly Return: 0.39002049230769226
+
+Trial 5
+
+Week 1, Winner: T, Percentage: -0.0975927
+Week 2, Winner: DIS, Percentage: -0.574713
+Week 3, Winner: TRV, Percentage: 3.37154
+Week 4, Winner: T, Percentage: 1.46723
+Week 5, Winner: IBM, Percentage: -1.8709
+Week 6, Winner: T, Percentage: 0.673077
+Week 7, Winner: DD, Percentage: 0
+Week 8, Winner: DD, Percentage: 1.56522
+Week 9, Winner: MMM, Percentage: -3.56194
+Week 10, Winner: UTX, Percentage: -0.277342
+Week 11, Winner: VZ, Percentage: 0.794777
+Week 12, Winner: VZ, Percentage: 1.83876
+Week 13, Winner: JNJ, Percentage: 3.22086
+
+Quarterly Return: 6.5489763000000005
+Average Weekly Return: 0.5037674076923078
+
+Trial 6
+
+Week 1, Winner: TRV, Percentage: -0.417851
+Week 2, Winner: MRK, Percentage: 2.46437
+Week 3, Winner: TRV, Percentage: 3.37154
+Week 4, Winner: MCD, Percentage: 1.50356
+Week 5, Winner: MCD, Percentage: 0.382653
+Week 6, Winner: IBM, Percentage: 0.908605
+Week 7, Winner: MMM, Percentage: -2.07243
+Week 8, Winner: DD, Percentage: 1.56522
+Week 9, Winner: KO, Percentage: -2.10636
+Week 10, Winner: T, Percentage: -0.687398
+Week 11, Winner: TRV, Percentage: -2.02977
+Week 12, Winner: TRV, Percentage: -1.54594
+Week 13, Winner: CSCO, Percentage: 6.15797
+
+Quarterly Return: 7.494168999999999
+Average Weekly Return: 0.5764745384615384
+
+Trial 7
+
+Week 1, Winner: MCD, Percentage: -0.35382
+Week 2, Winner: CVX, Percentage: -3.18936
+Week 3, Winner: BA, Percentage: 3.74037
+Week 4, Winner: PFE, Percentage: 5.11278
+Week 5, Winner: CSCO, Percentage: 0.285551
+Week 6, Winner: UTX, Percentage: 0.112511
+Week 7, Winner: BA, Percentage: -1.44928
+Week 8, Winner: CAT, Percentage: 3.25765
+Week 9, Winner: IBM, Percentage: -2.01259
+Week 10, Winner: WMT, Percentage: -2.1166
+Week 11, Winner: PFE, Percentage: 0.896414
+Week 12, Winner: T, Percentage: -0.717547
+Week 13, Winner: AA, Percentage: 7.16163
+
+Quarterly Return: 10.727708999999999
+Average Weekly Return: 0.8252083846153846
+
+Trial 8
+
+Week 1, Winner: IBM, Percentage: -0.225033
+Week 2, Winner: PG, Percentage: 3.48275
+Week 3, Winner: VZ, Percentage: -1.83511
+Week 4, Winner: HPQ, Percentage: -1.68047
+Week 5, Winner: IBM, Percentage: -1.8709
+Week 6, Winner: IBM, Percentage: 0.908605
+Week 7, Winner: AA, Percentage: -4.35294
+Week 8, Winner: HD, Percentage: 0
+Week 9, Winner: HPQ, Percentage: -3.13841
+Week 10, Winner: GE, Percentage: -2.08445
+Week 11, Winner: WMT, Percentage: -0.1701
+Week 12, Winner: DD, Percentage: 4.9697
+Week 13, Winner: DIS, Percentage: 5.58214
+
+Quarterly Return: -0.41421800000000086
+Average Weekly Return: -0.03186292307692314
+
+Trials Average: 7.5341564875
+Evaluation took:
+  180.971 seconds of real time
+  164.810624 seconds of total run time (158.489744 user, 6.320880 system)
+  [ Run times consist of 8.422 seconds GC time, and 156.389 seconds non-GC time. ]
+  91.07% CPU
+  342,314,048 forms interpreted
+  451,410,201,980 processor cycles
+  20 page faults
+  54,197,802,368 bytes consed

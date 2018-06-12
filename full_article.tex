@@ -374,7 +374,7 @@ First we had to settle in a dataset on which we could perform this
 work. Initially, we selected the dataset proposed  by Brown, Pelosi, and
 Dirska \cite{brown2013dynamic}, which can be found at the UCI Machine
 Learning Repository under the name of "Dow Jones Index Data Set." % Justify this choice. - JJ
-% This dataset was chosen because it is relatively recent
+% This dataset was chosen because it is relatively recent.
 In
 this work we only used the open, high, low, and close prices, and we
 obtained the average directional index (ADX), stochastic oscillator
@@ -408,7 +408,6 @@ series, \textit{O} represents the open price, \textit{H} the high,
 \textit{L} the low, and \textit{C} the close price.
 % Summary of the structure of the dataset: number of elements, number
 % of days, number of stocks... - JJ
-
 This dataset is going to be used to create a system that helps take decisions
 regarding stock trading, by telling the user the
 direction the market is going to take (downtrend or uptrend) and
@@ -543,6 +542,12 @@ previously, get defuzzified into a directional strength value). % A
 % This has to be explained better. I'm lost again. I though we were
 % using fixed MFs. We use a GA for the community and GP for the
 % membership functions? All individuals have the same one? - JJ
+
+% We use GP to evolve a function that represents the MF (that's why
+% they look ugly), and an evolutionary algorithm that migrate the
+% communities of agents. If I ever said that this was a genetic
+% algorithm, this is wrong.
+
 We introduce in this paper a method  that generates the MF: The GP algorithm uses a sum of
 sines to produce functions that are converted to the MF of the FIS of
 the agents. A graphical representation of an input and output MF 
@@ -806,6 +811,14 @@ again outperforms the average obtained by Brown, et al., which was
 % same if you get 10% rate on 1000$ and then 0.1% on 10$. The average
 % must be over the total money invested and obtained- JJ
 
+% I'm a little lost with this. "if you get 10% rate on $1000 and then
+% 0.1% on $10". The algorithm does a stock selection. This means that
+% it will tell you what stock to buy at point t in time. You just buy
+% and hold that stock, and after certain period of time, you just
+% calculate what percentage or rate of return you got. If the market
+% went N points up, this will represent a percentage of what you
+% invested. - AHA
+
 \subsubsection{Extended Experiments - Constant Configuration, Increasing Generations}
 
 The first extended experiment consists on providing the proposed
@@ -822,6 +835,15 @@ generations. With a very high number of generations, the method starts
 acting chaotically. It is noteworthy to mention that the proposed
 method never achieved a negative average rate of return. % Some
                                 % explanation? - JJ
+                                %  I think that my motivation here was
+                                %  to show that the algorith behaves
+                                %  like other learning algorithms:
+                                %  with a low number of iterations or
+                                %  generations you'll get an
+                                %  under-trained model, with a
+                                %  moderate amount you'll get good
+                                %  results, and with very high number
+                                %  of iterations it'll get bad. - AHA
 
 \subsubsection{Extended Experiments - Variable Configurations}
 
