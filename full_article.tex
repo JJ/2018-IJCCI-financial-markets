@@ -1187,10 +1187,28 @@ A heatmap is provided in Figure \ref{rates-of-return-heatmap} for the reader in 
 % I guess, anyway).
 * * Say something about future work - JJ
 
-The proposed 
-algorithm goes deeper than just giving recommendations; in the end, a
-novel method for performing regression has been created, and the authors
-believe that it can be extended to also perform classification tasks.
+The objective of the present work is to provide a novel method to
+perform market selection and forecasting. The proposed method achieved
+this objective by creating a solution based on several algorithms: the
+use of a MAS to simulate the interaction of traders buying and selling
+a market, a FIS for each of the agents of the MAS to represent their
+knowledge of the market, and GP to evolve this knowledge.
+
+The results obtained by using the proposed method are better compared
+to the work of Brown, Pelosi, and Dirska \cite{brown2013dynamic}, and
+show that its use would yield profits if trading the stock market
+using a stock selection strategy.
+
+An interesting feature of the present method is its use of GP for
+evolving membership functions. Limiting the possible operators to use
+in the evolutionary process to the addition and sine operators allowed
+GP to create flexible functions that were able to represent the
+agents' knowledge in the MAS.
+
+It is worth to note that the proposed algorithm goes deeper than just
+giving recommendations; in the end, a novel method for performing
+regression has been created, and the authors believe that it can be
+extended to also perform classification tasks.
 
 % In conclusion, one can see that the results are very satisfactory, and
 % that the system can effectively be used as a DSS, and as a technique
