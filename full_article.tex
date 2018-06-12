@@ -138,9 +138,19 @@ recommendation of what financial market to trade, as in the work by
 Brown, Pelosi, and Dirska \cite{brown2013dynamic}. The
 method uses a combination of fuzzy inference systems (FIS), genetic
 programming (GP) \cite{poli2008field} \cite{Koza1992} and multi-agent
-systems (MAS) \cite{Shoham2009} to produce models that can explain the
+systems (MAS) \cite{Shoham2009} to generate models that can explain the
 behavior of complex systems such as that of a financial market by
-analyzing the the evolved membership functions (MF) of each agent. 
+analyzing the the evolved membership functions (MF) of each agent. %
+%
+%
+The rationale behind this selection of aproaches is as follows: GP
+provides more flexibility against a more traditional approach such as
+parameter adjusting; MAS represents a model that simulates how a
+market is actually generated: through the interaction of several entities
+that are buying and selling that market; and FIS is a model that can provide
+knowledge representation through a set of rules and MF that can be
+easily interpreted by a human being, unlike other models that act as a
+black box. % Justification to the selection of technologies/models - AHA
 
 % The differences between ABM and MAS are subtle, but have to be noted
 % before proceeding. According to Niazi and Hussain \cite{Niazi2011},
@@ -458,7 +468,14 @@ a number of five membership functions gave good results in most cases. % 5 membe
                                 % something like "high" or "low." We
                                 % just want to map an antecedent to a
                                 % consequent, and then perform the
-                                % aggregation and defuzzification. - AHA
+                                % aggregation and defuzzification. -
+                                % AHA
+%
+As the MF are being evolved, they don't really mean something such as
+``high'' or ``low,'' as in other fuzzy systems constructed by expert
+human beings. The objective in this process is only to map an
+antecedent to a consequent, to later perform an aggregation and
+defuzzification. % Reworded the comented paragraph above - AHA
 The FIS
 defuzzifies the aggregation of the MF at their activation level
 determined by its inputs, and this will represent a directional
@@ -819,6 +836,13 @@ again outperforms the average obtained by Brown, et al., which was
 % went N points up, this will represent a percentage of what you
 % invested. - AHA
 
+The algorithm does a stock selection, which means that
+it will determine what stock to buy at a certain point in time. The
+selected stock is bought and hold, and after certain period of time,
+a profit or loss can be calculated depending on the amount of points
+the market moved. These points can be translated to a rate of
+return. %  I just reworded a bit the paragraph above. - AHA
+
 \subsubsection{Extended Experiments - Constant Configuration, Increasing Generations}
 
 The first extended experiment consists on providing the proposed
@@ -844,6 +868,12 @@ method never achieved a negative average rate of return. % Some
                                 %  moderate amount you'll get good
                                 %  results, and with very high number
                                 %  of iterations it'll get bad. - AHA
+%
+The motivation behind these tests is to show that the algorithm
+behaves as other learning algorithms usually behave: a training process involving a
+low number of iterations or generations creates an under-trained
+model, a moderate number of iterations creates a model that performs
+well, and a high number of iterations creates an over-trained model. % Reworded the commented paragraph above - AHA
 
 \subsubsection{Extended Experiments - Variable Configurations}
 
