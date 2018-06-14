@@ -46,7 +46,9 @@
   a decision support system, which helps users
   choose a stock to buy. In order to arrive to a decision, an 
   architecture of zero-sum multi-agents based on fuzzy
-  inference systems and genetic programming was designed. This
+  inference systems and genetic programming was designed.  Each of the agents uses a fuzzy inference system to decide in what
+  direction they will trade and how much trading force they will
+  use. This
   architecture allows a person %individual == agent?    % No, a human
                                %being. The idea here is that you can
                                %check how the membership functions
@@ -58,11 +60,10 @@
                                %configuration affected this
                                %decision. - AHA
   %OK
-  to examine the membership
+  to examine the evolved membership
   functions of the fuzzy inference systems to better understand the
-  behavior of a financial market. Each of the agents uses a fuzzy inference system to decide in what
-  direction they will trade and how much trading force they will
-  use. The multi-agent system % the whole system? - JJ   % Yes, all
+  behavior of a financial market.
+  The multi-agent system % the whole system? - JJ   % Yes, all
                               % the agents start evolving to curve fit
                               % the market prices. For example, if the
                               % price at point t0 is 10, and agent1 is
@@ -74,7 +75,7 @@
   the next movement in the time series; this process is repeated for
   every financial market being considered, and the stock with the highest
   predicted strength is recommended to the user to be traded. The
-  method was tested  and found profitable against a stock selection benchmark based on the
+  method was tested and was found profitable against a stock selection benchmark based on the
   Dow Jones Index.} % Is that the only metric?  Being profitable? - JJ
                     % % Unfortunately, yes. As far as I remember, I
                     % avoided focusing on error minimization, for
@@ -134,8 +135,8 @@
 In this paper we will introduce a method that uses Agent Based
 Modeling (ABM, \cite{gilbert2008agent}) to improve the
 decision process used in trading financial markets: the trader will receive a
-recommendation of what financial market to trade, as in the work by
-Brown, Pelosi, and Dirska \cite{brown2013dynamic}. The
+recommendation of what financial market to trade, as in the work of
+Brown, Pelosi, and Dirska \cite{brown2013dynamic}. The proposed 
 method uses a combination of fuzzy inference systems (FIS), genetic
 programming (GP) \cite{poli2008field} \cite{Koza1992} and multi-agent
 systems (MAS) \cite{Shoham2009} to generate models that can explain the
@@ -145,11 +146,11 @@ analyzing the the evolved membership functions (MF) of each agent. %
 %
 The rationale behind this selection of aproaches is as follows: GP
 provides more flexibility against a more traditional approach such as
-parameter adjusting; MAS represents a model that simulates how a
+parameter tuning; MAS represents a model that simulates how a
 market is actually generated: through the interaction of several entities
-that are buying and selling that market; and FIS is a model that can provide
-knowledge representation through a set of rules and MF that can be
-easily interpreted by a human being, unlike other models that act as a
+that are buying and selling that market; and a FIS is a model that can provide
+knowledge representation through a set of rules and MFs that can be
+interpreted by a human being, unlike other models that act as a
 black box. % Justification to the selection of technologies/models - AHA
 
 % The differences between ABM and MAS are subtle, but have to be noted
@@ -163,13 +164,14 @@ black box. % Justification to the selection of technologies/models - AHA
 The MAS developed in this work belongs to a class of coalitional games
 called constant-sum game \cite{Shoham2009}, and, in particular, it is
 a zero-sum game. Agents in the proposed method are selfish agents that
-don't intervene with other agents, but there's a higher order process
+don't intervene with other agents, but there is a higher order process
 that is dictating how they must organize. In this case, the collective
 work of every agent must yield a "zero-sum": the sum of their forces
 must be equal to the observed price, or in other words, they must
-adjust to the real prices. To achieve this, each agent uses a FIS to
+adjust to the real prices. To achieve this, each agent uses knowledge 
+represented as a FIS to
 decide how much trading force it is going to provide and in what
-direction, and its MF are generated using GP. The combination of using
+direction, and its MFs are generated using GP. The combination of using
 FIS and GP allows us to create conclusions about the behavior of the
 market, by interpreting the evolved MF of each agent in the system
 (for example, one can infer that whenever certain TI is low, and
@@ -370,6 +372,8 @@ and it outperforms the simple buy-and-hold strategy.
 % expert knowledge. The performance of the system depends on the
 % quality of user's input and the efficiency of its GP search engine.
 
+
+% TO DO in a future work: - Mario
 % It would be better to integrate this state of the art into a single
 % narrative, to show the kind of results that are obtained, not simply
 % mention past papers - JJ
@@ -383,10 +387,13 @@ and it outperforms the simple buy-and-hold strategy.
 First we had to settle in a dataset on which we could perform this
 work. Initially, we selected the dataset proposed  by Brown, Pelosi, and
 Dirska \cite{brown2013dynamic}, which can be found at the UCI Machine
-Learning Repository under the name of "Dow Jones Index Data Set." % Justify this choice. - JJ
+Learning Repository under the name of "Dow Jones Index Data Set." 
+This dataset was selected because it contains recent traiding data
+and it is available in an open repository.
+% Justify this choice. - JJ
 % This dataset was chosen because it is relatively recent.
-In
-this work we only used the open, high, low, and close prices, and we
+% Basic justification added - Mario 
+In this work we only used the open, high, low, and close prices, and we
 obtained the average directional index (ADX), stochastic oscillator
 (SO), and relative strength index (RSI) for the dataset records by
 using an online tool called FreeStockCharts, which can be found at
@@ -458,8 +465,8 @@ Each of the agents in the communities uses a FIS to take
 decisions. The inputs of this FIS, as has been mentioned before, are
 the ADX, SO, and RSI. The output is a real number between -100 and 100
 that represents the directional strength. To arrive to this output
-number, one can choose a number of MF that act as inputs and a number
-of MF that act as outputs. By trial and error, the authors found that
+number, one can choose a number of MFs that act as inputs and a number
+of MFs that act as outputs. By trial and error, the authors found that
 a number of five membership functions gave good results in most cases. % 5 membership
                                 % functions? - JJ   % Yeah, membership
                                 % functions. The idea is that, as the
